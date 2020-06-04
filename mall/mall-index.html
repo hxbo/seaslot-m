@@ -1,0 +1,450 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>赢8金币商城</title>
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_425853_o2135ak9dt.css">
+    <link rel="stylesheet" href="../css/mobile.css">
+    <link type="text/css" rel="stylesheet" href="../css/mall.css"/>
+    <script type="text/javascript" src="../js/jquery2.1.4.min.js"></script>
+    <script type="text/javascript" src="../js/layer.js"></script>
+</head>
+<body >
+
+
+<div class="page-group" >
+    <div class="page page-current disable-router" style="background: #fff">
+        <header class="bar bar-nav">
+            <!--<a class="button button-link button-nav pull-left back" href="index2.html" data-transition='slide-out'>
+                <span class="icon icon-left"></span>
+                返回
+            </a>-->
+            <a class="icon icon-menu pull-left open-panel c-white" data-panel=".panel-left"></a>
+            <h1 class="title"><img src="../images/header-logo.png" alt=""></h1>
+            <a href="javascript:void(0)" class="icon icon-service pull-right c-white"></a>
+        </header>
+
+
+        <div class="content">
+            <!-- 商城产品 -->
+            <div id="goodsList">
+
+            </div>
+            <!--/. 商城产品 -->
+
+            <!-- 分页 -->
+            <div class="pagenation" data-name="all">
+                <ul>
+
+                </ul>
+            </div>
+            <!--/. 分页 -->
+
+
+            <div class="float-btn-box">
+                <a href="javascript:void(0)" id="Btn-top" class="to-top" style="display: none;"><i class="icon icon-up"></i></a>
+                <a href="javascript:void(0)" id="showMenu" class="q-and-a open-panel" data-panel=".panel-right">商品<br>分类</a>
+                <a href="javascript:void(0)" id="Btn-ques" class="q-and-a">获取<br>金币</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- popup, panel 等放在这里 -->
+
+    <!-- 金币帮助 20200211 -->
+    <style>
+        .content-block dl dt{
+            margin-top: 1rem;
+            margin-bottom: .3rem;
+            color: #dd4651;
+        }
+        .content-block dl dd{
+            margin-left: 0rem;
+            font-size: 0.75rem;
+        }
+    </style>
+    <div class="popup popup-gold-introduce">
+        <a href="#" class="close-popup"><i class="fa fa-close"></i> 关闭</a>
+        <div style="width: 100%;height: 100%; overflow: auto">
+            <div class="content-block">
+                <div class="text-box" style="padding-top: 0;">
+                    <h3>金币说明</h3>
+                    <dl>
+                        <dt>如何获得金币？</dt>
+                        <dd>1.（转账汇款）每存款50元：可兑换2个金币。</dd>
+                        <dd>2.（在线充值）每存款50元：可获取1个金币。</dd>
+                        <dd>3. 每1000有效投注额也可以获取兑换1个金币。</dd>
+                        <dt>我兑换了礼品，如何领取？</dt>
+                        <dd>如兑换网站商城里面的实物礼品，需先填写详细的收货地址，我们将会安排相关物流送货上门。如兑商品/物品，我们将会在(3天内)确认是否有现货后再行安排物流。如兑换现金筹码，我们将会在（30分钟内）系统自动审核添加到账。
+                            <br><span style="color: #928f9f;">温馨提示：兑换现金筹码后需完成（筹码礼金1倍流水）方可办理提现。</span></dd>
+                        <dt>如何查看我的历史订单？</dt>
+                        <dd>您可以点击用户中心进入到记录里，在记录里选择（兑换记录）就能够查询您的兑换商品记录了​​</dd>
+                        <dt>金币结算时间</dt>
+                        <dd>金币会在（每日）下午17点之前，系统自动结算并添加到游戏账号中，到时请自行查看。有任何问题请及时联系客服人员。</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/. 金币帮助 -->
+    <div class="panel-overlay"></div>
+    <!-- 左侧栏 -->
+    <div class="panel panel-left panel-cover">
+        <div class="panel-nav">
+            <ul>
+                <li><a class="close-panel" href="../index.html"><i class="iconfont icon-home"></i>首页</a></li>
+                <li><a class="close-panel" href="../mall/mall-index.html"><i class="iconfont icon-coin"></i>金币商城</a></li>
+                <li><a class="close-panel" href="../prefer.html"><i class="iconfont icon-youhui"></i>优惠活动</a></li>
+                <li><a class="close-panel" href="../notice.html"><i class="iconfont icon-gonggao"></i>最新公告</a></li>
+                <li><a class="close-panel" href="../help.html"><i class="iconfont icon-bangzhu"></i>帮助中心</a></li>
+            </ul>
+        </div>
+        <div class="content-block">
+            <!--
+                         Click on link with "close-panel" class will close panel
+                        <p><a href="#" class="close-panel">关闭</a></p>-->
+        </div>
+    </div>
+    <!-- / 左侧栏 -->
+
+    <!-- 右侧栏-商品分类 -->
+    <div class="panel panel-right panel-cover" style="background-color: transparent;">
+        <div class="mall-nav" id="mallNav">
+
+        </div>
+        <div class="content-block">
+            <!--
+                         Click on link with "close-panel" class will close panel
+                        <p><a href="#" class="close-panel">关闭</a></p>-->
+        </div>
+    </div>
+    <!-- / 左侧栏-商品分类 -->
+
+
+    <!-- 地址弹窗 -->
+    <style>
+
+    </style>
+    <div id="formAddr">
+        <form action="">
+            <div>
+                <input type="text" placeholder="收货人姓名" style="">
+            </div>
+            <div>
+                <input type="number" placeholder="收货人手机">
+            </div>
+            <div>
+                <textarea  placeholder="收货地址" rows="4"></textarea>
+            </div>
+            <div>
+                <button type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+    <!--/. 地址弹窗 -->
+
+</div>
+<script src="../js/plugins/handlebars/handlebars-v4.0.12.js"></script>
+<script id="goods-nav-template" type="text/x-handlebars-template">
+    <a id="all" class="active close-panel" href="javascript:void(0)"><i class="iconfont icon-home"></i><span>全部商品</span></a>
+    {{#each this}}
+    <a id={{id}} class="close-panel" href="javascript:void(0)"><i class="iconfont icon-{{icon}}"></i><span>{{zoneName}}</span></a>
+    {{/each}}
+</script>
+<script id="goods-template" type="text/x-handlebars-template">
+    <ul>
+        {{#each this}}
+
+        <li data-id={{id}} data-entity={{entity}}>
+            <a href="javascript:void(0)" data-link={{link}} title='{{name}}'>
+                <img data-name="imgSrc" src={{replaceUrl imgSrc}}>
+                <span class="name">{{name}}</span>
+                <span class="price">¥ {{originalPrice}}</span>
+            </a>
+            <div class="price-info-layer">
+                <!--<div class="name">{{name}}</div>-->
+                <ul>
+                    <li><label>普通会员：</label> <span class="coin-price">{{ordinaryMemberPrice}}</span> 金币</li>
+                    <li><label>白金VIP：</label> <span class="coin-price">{{platinumVipPrice}}</span> 金币</li>
+                    <li><label>黄金VIP：</label> <span class="coin-price">{{goldenVipPrice}}</span> 金币</li>
+                    <li><label>钻石VIP：</label> <span class="coin-price">{{diamondVipPrice}}</span> 金币</li>
+                    <li><label>至尊VIP：</label> <span class="coin-price">{{superVipPrice}}</span> 金币</li>
+                </ul>
+                {{#if showDetail}}
+                <a class="view-btn" href="javascript:void(0)" data-link={{link}}>查看商品详情</a>
+                {{else}}
+
+                {{/if}}
+                <a class="buy-btn" href="javascript:void(0)">兑换商品</a>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+
+</script>
+<script type="text/javascript">
+    //Helper: 替换路径中的${imgSrc}
+    Handlebars.registerHelper('replaceUrl', function(text) {
+        text = Handlebars.Utils.escapeExpression(text);
+        text = text.toString();
+        if(text.indexOf("${imgPath}") != -1){
+            console.log('before:'+text);
+            text = 'http://www.16223.com/' + text.split("${imgPath}").join(''); //去重
+            //text = text.replace("${imgPath}", 'http://www.16223.com/'); //${imgPath}
+            console.log('after:'+text);
+        }
+        return new Handlebars.SafeString(text);
+    });
+
+
+    jQuery.noConflict();
+    (function($){   //定义匿名函数并设置形参为$
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "goods.json",
+                dataType: "json",
+
+                success: function (data) {
+                    var navTemplate = Handlebars.compile($("#goods-nav-template").html());
+                    var xianjinData = data[0].data,
+                        dianziData = data[1].data,
+                        xiuxianData = data[2].data,
+                        dailianData = data[3].data,
+                        shechipinData = data[4].data,
+                        shoucangData = data[5].data,
+                        shenghuoData = data[6].data,
+                        allData = [];
+                    for (var i = 0; i < data.length; i++) {
+                        allData.push(data[i].data);
+                    }
+                    allData = [].concat.apply([], allData);
+                    $('#mallNav').html(navTemplate(data));
+                    //初始加载全部商品
+                    getZone(allData,1);
+                    createpage(allData.length);
+                    var nav = $("#mallNav > a");
+                    //点击菜单切换专区
+                    nav.on('click', function (e) {
+                        var navId = $(this).attr('id');
+                        switch (navId) {
+                            case "all":
+                                getZoneAndCreatepage(allData);
+                                break;
+                            case "xianjin":
+                                getZoneAndCreatepage(xianjinData);
+                                break;
+                            case "dianzi":
+                                getZoneAndCreatepage(dianziData);
+                                break;
+                            case "xiuxian":
+                                getZoneAndCreatepage(xiuxianData);
+                                break;
+                            case "dailian":
+                                getZoneAndCreatepage(dailianData);
+                                break;
+                            case "shechipin":
+                                getZoneAndCreatepage(shechipinData);
+                                break;
+                            case "shoucang":
+                                getZoneAndCreatepage(shoucangData);
+                                break;
+                            case "shenghuo":
+                                getZoneAndCreatepage(shenghuoData);
+                                break;
+                        }
+                    });
+
+                    //分页
+                    $(document).on('click',".pagenation a",function (e) {
+                        var areaName =$(this).parents('.pagenation').attr("data-name");
+                        var pageNumber = $(this).text();
+                        $(".pagenation a").removeClass('active');
+                        $(".content").animate({"scrollTop":0},500);
+                        $(this).addClass('active');
+                        switch (areaName) {
+                            case "all":
+                                getZone(allData,pageNumber);
+                                break;
+                            case "xianjin":
+                                getZone(xianjinData,pageNumber);
+                                break;
+                            case "dianzi":
+                                getZone(dianziData,pageNumber);
+                                break;
+                            case "xiuxian":
+                                getZone(xiuxianData,pageNumber);
+                                break;
+                            case "dailian":
+                                getZone(dailianData,pageNumber);
+                                break;
+                            case "shechipin":
+                                getZone(shechipinData,pageNumber);
+                                break;
+                            case "shoucang":
+                                getZone(shoucangData,pageNumber);
+                                break;
+                            case "shenghuo":
+                                getZone(shenghuoData,pageNumber);
+                                break;
+                        }
+                    });
+
+                    //点击商品
+                    $(document).on('click','#goodsList li>a',function(){
+                        let $pop = $(this).next(".price-info-layer") ;
+                        layer.closeAll('page')
+                        layer.open({
+                            title:'商品价格',
+                            type: 1,
+                            shadeClose: true,
+                            shade: 0,
+                            area: ['90%', 'auto'], //宽高
+                            content: $pop
+                        });
+                    })
+
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(errorThrown)
+                }
+            });
+
+            var getZoneAndCreatepage  = function (data) {
+                getZone(data);
+                createpage(data.length);
+            };
+            var limit = 60;//每页商品数量
+
+            //切换专区方法
+            var getZone = function (data,pageNumber) {
+                var goodsData = [];
+                var index = layer.load(0, {shade: false}); //0代表加载的风格，支持0-2
+                var goodsAmount = data.length;
+                var pages = Math.ceil(goodsAmount / limit); //页数
+                pageNumber = pageNumber || 1;  //默认加载第一页
+
+
+                if(pageNumber == pages){
+                    //最后一页
+                    var lastPageGoodsAmount = goodsAmount % limit;
+                    goodsData=data.slice(-lastPageGoodsAmount);
+                }else{
+                    for (var j = (pageNumber-1)*limit; j < pageNumber*limit; j++) {
+                        goodsData.push(data[j])
+                    }
+                }
+                layer.closeAll('loading'); //关闭加载层
+                //渲染模板
+                var goodsTemplate = Handlebars.compile($("#goods-template").html());
+                $('#goodsList').html(goodsTemplate(goodsData));
+            };
+
+            //生成页码
+            var createpage = function (count) {
+                var pages = Math.ceil(count / limit); //计算页数
+                var pageHtml='';
+                for(var y=1;y<=pages;y++){
+                    pageHtml+='<li><a href="javascript:void(0)">'+y+'</a></li>'
+                }
+                $(".pagenation ul").html(pageHtml);
+                $(".pagenation ul li:first-child > a").addClass('active')
+            };
+
+            //点击菜单
+            $(document).on('click', "#mallNav a", function (e) {
+                $("#mallNav a").removeClass('active');
+                $(this).addClass('active');
+                $(".pagenation").attr("data-name",$(this).attr("id"));
+                $('.content').animate({"scrollTop":0},500)
+            });
+
+
+            //兑换商品
+            $(document).on('click', '.buy-btn', function (e) {
+                layer.closeAll();
+                var goodsId = $(this).parents('li').attr('data-id');
+                var goodsEntity = JSON.parse($(this).parents('li').attr('data-entity'));
+                var goodsName = $(this).parents('li').children('a').attr('title');
+                //询问框
+                layer.confirm('您要兑换的商品：<p>' + goodsName + '</p>', {
+                    title: "商品兑换确认",
+                    area: ['90%', 'auto'], //宽高
+                    btn: ['确定', '取消'] //按钮
+                }, function () {
+                    layer.closeAll();
+                    if(goodsEntity){ //实体产品
+                        layer.open({
+                            title:'收货信息',
+                            type: 1,
+                            area: ['90%', 'auto'], //宽高
+                            content: $("#formAddr")
+                        });
+                    }else{
+                        layer.msg('<b>商品兑换成功！</b><br>商品id：  ' + goodsId)
+                    }
+
+                });
+            });
+
+            //gotop
+            $('.content').scroll(function(){
+                if($(this).scrollTop()>300){
+                    $('#Btn-top').show();
+                }else{
+                    $('#Btn-top').hide();
+                }
+            });
+            $(document).on('click', '#Btn-top', function (e) {
+                $(".content").animate({"scrollTop":0},500);
+            });
+
+        });
+    })(jQuery);    //执行匿名函数且传递实参jQuery
+
+</script>
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+
+<script>
+    (function($){
+        //问号
+        $(document).on("click","#Btn-ques",()=>{
+            $.popup('.popup-gold-introduce')
+        });
+
+        //查看商品详情
+        $(document).on('click', '.view-btn', function (e) {
+            var link = $(this).attr("data-link");
+            var goodsName = $(this).parents("li").children("a").attr("title");
+            var goodsId = $(this).parents('li').attr('data-id');
+            var popupHTML = '<div class="popup ">' +
+                '<a href="#" class="close-popup"><i class="fa fa-close"></i> 关闭</a>'+
+                '<div class="content-block" style="width: 100%;height: 100%;margin: 0;padding-bottom: 50px;overflow: auto">'+
+                '<iframe src='+link+' frameborder="0" style="width: 100%;height: 100%; overflow: auto"></iframe>'+
+                '</div>'+
+                '</div>'
+            $.popup(popupHTML);
+            /*layer.open({
+                type: 2,
+                title: goodsName,
+                shadeClose: true,
+                shade: 0.8,
+                area: ['100%', '100%'],
+                content: link
+            });*/
+        });
+
+    })(Zepto)
+
+</script>
+</body>
+</html>
