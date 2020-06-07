@@ -148,6 +148,7 @@
         }
 
         var value = (namespace) ? $.i18n.map[namespace][key] : $.i18n.map[key];
+        console.log($.i18n.map)
         if (value === null) {
             return '[' + ((namespace) ? namespace + '#' + key : key) + ']';
         }
