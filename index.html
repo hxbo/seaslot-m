@@ -48,46 +48,46 @@
             <a class="icon icon-menu pull-left open-panel c-white" data-panel=".panel-left"></a>
             <h1 class="title"><img src="images/header-logo.png" alt=""></h1>
             <div class="lan2" style="position: absolute;right: 0;">
-                <select id="language">
-                    <option value="zh-CN">中文简体</option>
-                    <option value="en">English</option>
+                <select id="language" style="font-size: 12px;background: #000;color: #fff;margin-top: 15px;margin-right: 10px;">
+                    <option id="zh-CN" value="zh-CN" style="color: #fff;">中文简体</option>
+                    <option id="en" value="en" style="color: #fff;">English</option>
                 </select>
             </div>
         </header>
         <!-- 登录前 -->
         <div class="nav-before-login ">
-            <a href="reg.html">免费注册</a>
-            <a href="login.html">玩家登录</a>
+            <a href="reg.html" data-i18n-text="regFree">免费注册</a>
+            <a href="login.html" data-i18n-text="userLogin">玩家登录</a>
         </div>
         <!--/. 登录前 -->
         <nav class="bar bar-tab">
             <a class="tab-item external active" href="index.html">
                 <span class="icon iconfont icon-shouye"></span>
-                <span class="tab-label">首页</span>
+                <span class="tab-label" data-i18n-text="navHome">首页</span>
             </a>
             <a class="tab-item external" href="game.html">
                 <span class="icon iconfont icon-youxi"></span>
-                <span class="tab-label">游戏中心</span>
+                <span class="tab-label" data-i18n-text="navGames">游戏中心</span>
             </a>
             <a class="tab-item external" href="#">
-                <span class="icon iconfont icon-kefu2"></span>
-                <span class="tab-label">客服</span>
+                <span class="icon iconfont icon-kefu2" ></span>
+                <span class="tab-label" data-i18n-text="navService">客服</span>
             </a>
             <a class="tab-item external" href="onlinepaystart.html">
                 <span class="icon iconfont icon-chongzhi"></span>
-                <span class="tab-label">充值</span>
+                <span class="tab-label" data-i18n-text="navRecharge">充值</span>
             </a>
             <a class="tab-item external" href="user-center.html">
                 <span class="icon iconfont icon-members"></span>
-                <span class="tab-label">会员中心</span>
+                <span class="tab-label" data-i18n-text="navUserCenter">会员中心</span>
             </a>
         </nav>
         <div class="content">
             <!-- 搜索 -->
             <div class="search-wrap clearfix">
                 <form action="">
-                    <input type="text" class="search-input" placeholder="水果机机机">
-                    <button class="search-btn">搜索</button>
+                    <input type="text" class="search-input" data-i18n-placeholder="searchGamesPlaceholder"  placeholder="游戏名称">
+                    <button class="search-btn"><i class="iconfont icon-sousuo"></i></button>
                 </form>
             </div>
             <!--/. 搜索 -->
@@ -120,11 +120,11 @@
             <!-- game 分类 -->
             <div class="game-category ">
                 <ul>
-                    <li><a class="" href="game.html"><i class="iconfont icon-laohuji1"></i></a><span>老虎机</span></li>
-                    <li><a class="" href="game-real.html"><i class="iconfont icon-meinv1"></i></a><span>真人</span></li>
+                    <li><a class="" href="game.html"><i class="iconfont icon-laohuji1"></i></a><span data-i18n-text="slot">老虎机</span></li>
+                    <li><a class="" href="game-real.html"><i class="iconfont icon-meinv1"></i></a><span data-i18n-text="real">真人</span></li>
                     <!--<li><a class="" href="game-real.html"><i class="iconfont icon-caipiao1"></i></a><span>彩票</span></li>-->
-                    <li><a class="" href="game-sport.html"><i class="iconfont icon-tiyu"></i></a><span>体育</span></li>
-                    <li><a class="" href="game-chess.html"><i class="iconfont icon-qipai"></i></a><span>棋牌</span></li>
+                    <li><a class="" href="game-sport.html"><i class="iconfont icon-tiyu"></i></a><span data-i18n-text="sport">体育</span></li>
+                    <li><a class="" href="game-chess.html"><i class="iconfont icon-qipai"></i></a><span data-i18n-text="poker">棋牌</span></li>
                 </ul>
             </div>
             <!-- /. game 分类 -->
@@ -159,7 +159,7 @@
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-youxi1"></use>
                         </svg>
-                        <b>进入游戏大厅</b>
+                        <b data-i18n-text="EnterGameHall">进入游戏大厅</b>
                     </a>
                 </div>
             </div>
@@ -185,7 +185,7 @@
             <!-- 中奖排行 -->
             <div class="block-wrap ">
                 <div class="block-title clearfix">
-                    <div class="title-outer">中奖排行</div>
+                    <div class="title-outer" data-i18n-text="WinningList">中奖排行</div>
                     <b><i></i></b>
                 </div>
                 <!--<div class="block-title-2 clearfix">
@@ -234,19 +234,18 @@
     <div class="panel panel-left panel-cover">
         <div class="panel-nav">
             <ul>
-                <li><a class="close-panel" href="index.html"><i class="iconfont icon-home"></i>首页</a></li>
-                <li><a class="close-panel" href="mall/mall-index.html"><i class="iconfont icon-coin"></i>金币商城</a></li>
-                <li><a class="close-panel" href="prefer.html"><i class="iconfont icon-youhui"></i>优惠活动</a></li>
-                <li><a class="close-panel" href="notice.html"><i class="iconfont icon-gonggao"></i>最新公告</a></li>
-                <li><a class="close-panel" href="help.html"><i class="iconfont icon-bangzhu"></i>帮助中心</a></li>
+                <li><a class="close-panel" href="index.html"><i class="iconfont icon-home"></i><span data-i18n-text="sidenavHome">首页</span></a></li>
+                <li><a class="close-panel" href="prefer.html"><i class="iconfont icon-youhui"></i><span data-i18n-text="sidenavPrefer">优惠活动</span></a></li>
+                <li><a class="close-panel" href="notice.html"><i class="iconfont icon-gonggao"></i><span data-i18n-text="sidenavNotices">最新公告</span></a></li>
+                <li><a class="close-panel" href="help.html"><i class="iconfont icon-bangzhu"></i><span data-i18n-text="sidenavHelp">帮助中心</span></a></li>
             </ul>
-            <!-- 新增.service 20200429 -->
-            <div class="service">
+
+            <!--<div class="service">
                 <img src="images/qq-qr.png" />
                 <p style="margin-bottom: .4rem;">QQ客服(盈盈宝贝):2015520812</p>
                 <img src="images/alipay-qr.png" />
                 <p style="margin-bottom: 1rem;"> 支付宝客服：18206546852</p>
-            </div>
+            </div>-->
 
         </div>
         <div class="content-block">

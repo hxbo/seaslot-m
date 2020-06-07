@@ -229,14 +229,14 @@ header.bar{
         padding:3px 3px 3px 40px;
         @include box-shadow(0 0 7px rgba(71,71,71,.1));
         border: none;
-        width: 75%;
+        width: 80%;
         float: left;
         background:image_url('search-icon.png') no-repeat 10px center #fff;
         @include background-size(18px)
     }
     .search-btn{
         float: left;
-        width: 25%;
+        width: 20%;
         height: 36px;
         line-height: 36px;
         border-radius:0 6px  6px 0;
@@ -411,7 +411,7 @@ header{
                 border-radius:24px ;
                 clear: both;
                 margin-bottom: 0;
-                @include background(linear-gradient(293deg, #d86916,#ffda52));
+                @include background(linear-gradient(293deg, #8b2fdf,#e0c14d));
                 color: #fff;
                 text-align: center;
                 line-height: 64px;
@@ -520,6 +520,7 @@ header{
         @include transform(rotate(45deg));
         @include background(linear-gradient(left , #ff9e55 #ffda52));
         position: absolute;
+        visibility: visible;
         right: 15px;
         top: 16px;
     }

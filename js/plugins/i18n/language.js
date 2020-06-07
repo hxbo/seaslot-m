@@ -154,11 +154,12 @@ $(function(){
     execI18n();
 
     /*将语言选择默认选中缓存中的值*/
-    $("#language option[value="+i18nLanguage+"]").attr("selected",true);
 
+    $("#language option#"+i18nLanguage).prop("selected","selected");
     /* 选择语言 */
     $("#language").on('change', function() {
-        var language = $(this).children('option:selected').val()
+        var language = $(this).children('option:selected').val();
+
         console.log(language);
         getCookie("userLanguage",language,{
             expires: 30,
