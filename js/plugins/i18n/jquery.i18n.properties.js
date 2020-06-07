@@ -132,7 +132,7 @@
         var args = [].slice.call(arguments);
 
         var phvList, namespace;
-        if (args.length == 2) {
+        if (args.length === 2) {
             if ($.isArray(args[1])) {
                 // An array was passed as the second parameter, so assume it is the list of place holder values.
                 phvList = args[1];
