@@ -5,6 +5,8 @@ scss design by heixaobo  qq:9304600
 
 @import "compass", "normalize", "compass/support", "compass/css3", "compass/utilities";
 @import  "retina-sprites","mixin";
+@import "p_menu";
+@import "language";
 
 //
 //useful commond:
@@ -2158,4 +2160,3 @@ $flipDuration:225ms;
     }
 }
 
-@import "p_menu";

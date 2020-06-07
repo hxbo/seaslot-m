@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/*!
+scss design by heixaobo  qq:9304600
+*/
+@import "compass", "normalize", "compass/support", "compass/css3", "compass/utilities";
+
+.lan2 {
+    position: absolute;
+    right: 10px;
+    &:after{
+        content: "";
+        position: absolute;
+        right: -2px;
+        top: 22px;
+        width: 0;
+        height: 0;
+        border: 4px solid transparent;
+        border-top-color: #fff;
+        display: block;
+    }
+    #language {
+        font-size: 12px;
+        /*隐藏默认小箭头*/
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        color: #fff;
+        margin-top: 15px;
+        margin-right: 10px;
+        border: none;
+        position: relative;
+        /*用图片替换*/
+        background: transparent;
+
+    }
+
+    option {
+        color: #fff;
+        background: #000;
+
+        &[selected]{
+            background: #fff;
+        }
+    }
+}
