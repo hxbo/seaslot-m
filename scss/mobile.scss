@@ -8,13 +8,6 @@ scss design by heixaobo  qq:9304600
 @import "p_menu";
 @import "language";
 
-//
-//useful commond:
-
-//background:image-url('icon3.png') no-repeat;
-//@include icon-sprite(icon1);                             //single sprite
-//#{append_selector("p,div,span",".ddd")}{... }            //.ddd add to "p,div,span"
-
 
 
 //theme
@@ -173,14 +166,33 @@ h1 {
     @include background-size(100%)
 }
 .bar{
-    @include background(linear-gradient(top,$bgColor1 $bgColor2));
+    @include background(linear-gradient(top,#333 #1d1d1d));
+
     height: 2.4rem;
     &.bar-tab{
         display: table-row;
     }
  }
+.bar-tab .tab-item{
+    color: #fff;
+}
+.bar-tab .tab-item.active, .bar-tab .tab-item:active{
+    color: #fff;
+    position: relative;
+    @include background(linear-gradient(bottom, #e96474,#E77879));
+
+    .iconfont{
+        color: #fff;
+        @include text-shadow(3px 3px 10px rgba(238, 109, 87, 0.4))
+    }
+}
+.bar-tab .tab-item .icon{
+    color: #fff;
+    width: 24px;
+    height: 24px;
+}
 header.bar{
-    background: #1d1d1d;
+    @include background(linear-gradient(bottom,rgba(0,0,0,0.8),rgba(0,0,0,0)));
 }
 .panel{
     /*width: 90px;
@@ -202,22 +214,7 @@ header.bar{
         display: block;
     }
 }
-.bar-tab .tab-item{
-    color: #1d1d1d;
-}
-.bar-tab .tab-item.active, .bar-tab .tab-item:active{
-    color: #ee6d57;
-    border-bottom:2px solid #ee6d57;
-    .iconfont{
-        color: #ee6d57;
-        @include text-shadow(3px 3px 10px rgba(238, 109, 87, 0.2))
-    }
-}
-.bar-tab .tab-item .icon{
-    color: #908686;
-    width: 24px;
-    height: 24px;
-}
+
 
 //search
 .search-wrap{
@@ -229,11 +226,12 @@ header.bar{
         line-height: 30px;
         border-radius: 6px 0 0 6px;
         padding:3px 3px 3px 40px;
+        color: #fff;
         @include box-shadow(0 0 7px rgba(71,71,71,.1));
         border: none;
         width: 80%;
         float: left;
-        background:image_url('search-icon.png') no-repeat 10px center #fff;
+        background:image_url('search-icon.png') no-repeat 10px center rgba(0,0,0,.4);
         @include background-size(18px)
     }
     .search-btn{
@@ -247,7 +245,7 @@ header.bar{
         color: #fff;
         font-size: .9rem;
         border: none;
-        background: #dda72b;
+        @include background(linear-gradient(to right, #ff9e55,#ffda52))
     }
 }
 
@@ -413,7 +411,7 @@ header{
                 border-radius:24px ;
                 clear: both;
                 margin-bottom: 0;
-                @include background(linear-gradient(293deg, #8b2fdf,#e0c14d));
+               @include background(radial-gradient(circle at 32% 106%, #ffe17d 0px,#ffcd69 10%,#fa9137 28%,#eb4141 42%,rgba(0,0,0,0) 82%),linear-gradient(135deg, #234bd7 12%,#c33cbe 58%));
                 color: #fff;
                 text-align: center;
                 line-height: 64px;
@@ -494,7 +492,7 @@ header{
 //block-title
 .block-title{
     $height:2.2rem;
-    $theme-bg: #1a1a1a;
+    $theme-bg: rgba(0,0,0,0.4);
     margin-bottom: 1rem;
     background: $theme-bg;
     width: 80%;

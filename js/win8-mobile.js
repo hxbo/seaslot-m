@@ -277,7 +277,7 @@ let win8WapSetting = {
 };
 
 $(function () {
-    win8WapSetting.fixedIcon();
+    //win8WapSetting.fixedIcon();
     //win8WapSetting.topBarAd();
 
 
