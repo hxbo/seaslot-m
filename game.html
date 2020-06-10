@@ -3,30 +3,43 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>赢8娱乐</title>
+    <title class="i18n" data-i18n-text='title'></title>
+    <meta id="i18n_pagename" content="index-common">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="icon" type="image/png" href="i/favicon.png">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/sm-extend.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- build:mincss css/win8-style-mobile.min.css -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_425853_3w2y99r15ihhbyb9.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <!-- endbuild -->
-
-
+    <!--<link rel="stylesheet" href="css/animate.css">-->
 </head>
 <body>
 
 <div class="page-group">
     <div class="page page-current">
+        <!-- 顶部下载提示 -->
+        <div class="app-down">
+            <i class="close icon-close"></i>
+            <a href="#">
+                <img src="images/app-down.png" alt="">
+            </a>
+        </div>
+        <!--/. 顶部下载提示 -->
         <header class="bar bar-nav">
-            <!--<a class="button button-link button-nav pull-left back" href="index2.html" data-transition='slide-out'>                 <span class="iconfont icon-fanhui c-white"> </span></a> -->
+            <!--<a class="button button-link button-nav pull-left back" href="index2.html" data-transition='slide-out'>
+                <span class="icon icon-left"></span>
+                返回
+            </a>-->
             <a class="icon icon-menu pull-left open-panel c-white" data-panel=".panel-left"></a>
-            <h1 class="title">游戏大厅</h1>
-            <a href="javascript:void(0)" class="icon icon-service pull-right c-white"></a>
+            <h1 class="title"><img src="images/header-logo.png" alt=""></h1>
+            <div class="lan2">
+                <select id="language" >
+                    <option id="zh-CN" value="zh-CN" >中文简体</option>
+                    <option id="en" value="en" >English</option>
+                </select>
+            </div>
         </header>
         <!-- 登录前 -->
         <div class="nav-before-login">
@@ -35,48 +48,52 @@
         </div>
         <!--/. 登录前 -->
         <nav class="bar bar-tab">
-            <a class="tab-item external" href="index.html">
-                <span class="icon icon-index"></span>
-                <span class="tab-label">首页</span>
+            <a class="tab-item external " href="index.html">
+                <span class="icon iconfont icon-shouye"></span>
+                <span class="tab-label" data-i18n-text="navHome">首页</span>
             </a>
-            <a class="tab-item external active" href="game.html" >
-                <span class="icon icon-game"></span>
-                <span class="tab-label">游戏大厅</span>
+            <a class="tab-item external active" href="game.html">
+                <span class="icon iconfont icon-youxi"></span>
+                <span class="tab-label" data-i18n-text="navGames">游戏中心</span>
             </a>
-            <a class="tab-item external" href="onlinepaystart-alipay.html">
-                <span class="icon  icon-prefer"></span>
-                <span class="tab-label">充值</span>
+            <a class="tab-item external" href="#">
+                <span class="icon iconfont icon-kefu2" ></span>
+                <span class="tab-label" data-i18n-text="navService">客服</span>
+            </a>
+            <a class="tab-item external" href="onlinepaystart.html">
+                <span class="icon iconfont icon-chongzhi"></span>
+                <span class="tab-label" data-i18n-text="navRecharge">充值</span>
             </a>
             <a class="tab-item external" href="user-center.html">
-                <span class="icon  icon-user"></span>
-                <span class="tab-label">会员中心</span>
+                <span class="icon iconfont icon-members"></span>
+                <span class="tab-label" data-i18n-text="navUserCenter">会员中心</span>
             </a>
         </nav>
         <div class="content">
             <!-- 搜索 -->
             <div class="search-wrap clearfix">
                 <form action="">
-                    <input type="text" class="search-input" placeholder="水果机">
-                    <button class="search-btn">搜索</button>
+                    <input type="text" class="search-input" data-i18n-placeholder="searchGamesPlaceholder"  placeholder="游戏名称">
+                    <button class="search-btn"><i class="iconfont icon-sousuo"></i></button>
                 </form>
             </div>
             <!--/. 搜索 -->
             <!-- tab button -->
             <div class="content-block" style="margin-bottom: 0;">
                 <div class="buttons-row">
-                    <a href="game.html" class="active button">老虎机</a>
-                    <a href="game-real.html" class=" button">真人视讯</a>
-                    <a href="game-fish.html" class=" button">捕鱼</a>
-                    <a href="game-sport.html" class=" button">体育</a>
-                    <a href="game-lott.html" class=" button">彩票</a>
-                    <a href="game-chess.html" class=" button">棋牌</a>
+                    <a href="game.html" class="active button"><span data-i18n-text="slot">老虎机</span></a>
+                    <a href="game-real.html" class=" button"><span data-i18n-text="real">真人</span></a>
+                    <a href="game-fish.html" class=" button"><span data-i18n-text="fish">捕鱼</span></a>
+                    <a href="game-sport.html" class=" button"><span data-i18n-text="sport">体育</span></a>
+                    <a href="game-lott.html" class=" button"><span data-i18n-text="lottery">彩票</span></a>
+                    <a href="game-chess.html" class=" button"><span data-i18n-text="poker">棋牌</span></a>
                 </div>
             </div>
             <!-- /. tab button -->
 
             <div class="content-block"  style="margin-top: 0;">
                 <div class="buttons-tab sub-tab-2">
-                    <a href="#gameHall" class="tab-link active button">电玩厅</a>
+                    <a href="#gameHall" class="tab-link active button" data-i18n-text="gameHall">电玩厅</a>
                     <a href="#bbin" class="tab-link button">BBIN</a>
                     <a href="#mg" class="tab-link button">MG</a>
                     <a href="#pt" class="tab-link button">PT</a>
@@ -87,10 +104,10 @@
                 <div class="tabs">
                     <!-- 筛选 -->
                     <div class="game-filter">
-                        <a class="active" href="javascript:void(0)">奖池游戏</a>
-                        <a href="javascript:void(0)">经典游戏</a>
-                        <a href="javascript:void(0)">奖池游戏</a>
-                        <a href="javascript:void(0)">桌牌游戏</a>
+                        <a class="active" href="javascript:void(0)" data-i18n-text="jackpot">奖池游戏</a>
+                        <a href="javascript:void(0)" data-i18n-text="classic">经典游戏</a>
+                        <a href="javascript:void(0)" data-i18n-text="videoPoker">电子扑克</a>
+                        <a href="javascript:void(0)" data-i18n-text="tableGames">桌台游戏</a>
                     </div>
                     <!--/. 筛选 -->
 
@@ -98,7 +115,7 @@
                     <div id="gameHall" class="tab active">
                         <div class="content-block">
                             <div class="game-list">
-                                <ul class="clearfix">
+                                <ul class="">
                                     <li><a href="game.html" target="_blank"><img src="images/game-img/lhdb.jpg" alt=""></a><span>连环夺宝</span></li>
                                     <li><a href="#"><img src="images/game-img/tgpd.jpg" alt=""></a><span>糖果派对</span></li>
                                     <li><a href="#"><img src="images/game-img/buyu.jpg" alt=""></a><span>捕鱼游戏</span></li>
@@ -120,7 +137,7 @@
                     <div id="bbin" class="tab">
                         <div class="content-block">
                             <div class="game-list">
-                                <ul class="clearfix">
+                                <ul>
                                     <li><a href="#"><img src="images/game-img/sgj.jpg" alt=""></a><span>水果机</span></li>
                                     <li><a href="#"><img src="images/game-img/bcbm.jpg" alt=""></a><span>奔驰宝马</span></li>
                                     <li><a href="#"><img src="images/game-img/slwh.jpg" alt=""></a><span>森林舞会</span></li>
@@ -138,7 +155,7 @@
                     <div id="mg" class="tab">
                         <div class="content-block">
                             <div class="game-list">
-                                <ul class="clearfix">
+                                <ul>
                                     <li><a href="#"><img src="images/game-img/fqzs.jpg" alt=""></a><span>飞禽走兽</span></li>
                                     <li><a href="#"><img src="images/game-img/byds.jpg" alt=""></a><span>捕蝇大赛</span></li>
                                     <li><a href="#"><img src="images/game-img/fkhz.jpg" alt=""></a><span>疯狂猴子</span></li>
@@ -153,7 +170,7 @@
                     <div id="pt" class="tab">
                         <div class="content-block">
                             <div class="game-list">
-                                <ul class="clearfix">
+                                <ul>
                                     <li><a href="#"><img src="images/game-img/bsmz.jpg" alt=""></a><span>宝石迷阵</span></li>
                                     <li><a href="#"><img src="images/game-img/sgj.jpg" alt=""></a><span>水果机</span></li>
                                     <li><a href="#"><img src="images/game-img/bcbm.jpg" alt=""></a><span>奔驰宝马</span></li>
@@ -172,7 +189,7 @@
                     <div id="ttg" class="tab">
                         <div class="content-block">
                             <div class="game-list">
-                                <ul class="clearfix">
+                                <ul>
                                     <li><a href="#"><img src="images/game-img/jssm.jpg" alt=""></a><span>极速赛马</span></li>
                                     <li><a href="#"><img src="images/game-img/bqtp.jpg" alt=""></a><span>冰球突破</span></li>
                                 </ul>
@@ -184,7 +201,7 @@
                     <div id="png" class="tab">
                         <div class="content-block">
                             <div class="game-list">
-                                <ul class="clearfix">
+                                <ul>
                                     <li><a href="#"><img src="images/game-img/slwh.jpg" alt=""></a><span>森林舞会</span></li>
                                     <li><a href="#"><img src="images/game-img/fqzs.jpg" alt=""></a><span>飞禽走兽</span></li>
                                     <li><a href="#"><img src="images/game-img/byds.jpg" alt=""></a><span>捕蝇大赛</span></li>
@@ -198,7 +215,7 @@
                     <div id="hb" class="tab">
                         <div class="content-block">
                             <div class="game-list">
-                                <ul class="clearfix">
+                                <ul>
 
                                     <li><a href="#"><img src="images/game-img/fqzs.jpg" alt=""></a><span>飞禽走兽</span></li>
                                     <li><a href="#"><img src="images/game-img/byds.jpg" alt=""></a><span>捕蝇大赛</span></li>
@@ -223,11 +240,19 @@
     <div class="panel panel-left panel-cover">
         <div class="panel-nav">
             <ul>
-                <li><a class="close-panel" href="index.html" ><i class="iconfont icon-home"></i>首页</a></li>
-                <li><a class="close-panel" href="prefer.html"><i class="iconfont icon-youhui"></i>优惠活动</a></li>
-                <li><a class="close-panel" href="notice.html"><i class="iconfont icon-gonggao"></i>最新公告</a></li>
-                <li><a class="close-panel" href="help.html"><i class="iconfont icon-bangzhu"></i>帮助中心</a></li>
+                <li><a class="close-panel" href="index.html"><i class="iconfont icon-home"></i><span data-i18n-text="sidenavHome">首页</span></a></li>
+                <li><a class="close-panel" href="prefer.html"><i class="iconfont icon-youhui"></i><span data-i18n-text="sidenavPrefer">优惠活动</span></a></li>
+                <li><a class="close-panel" href="notice.html"><i class="iconfont icon-gonggao"></i><span data-i18n-text="sidenavNotices">最新公告</span></a></li>
+                <li><a class="close-panel" href="help.html"><i class="iconfont icon-bangzhu"></i><span data-i18n-text="sidenavHelp">帮助中心</span></a></li>
             </ul>
+
+            <!--<div class="service">
+                <img src="images/qq-qr.png" />
+                <p style="margin-bottom: .4rem;">QQ客服(盈盈宝贝):2015520812</p>
+                <img src="images/alipay-qr.png" />
+                <p style="margin-bottom: 1rem;"> 支付宝客服：18206546852</p>
+            </div>-->
+
         </div>
         <div class="content-block">
             <!--
@@ -237,23 +262,28 @@
     </div>
     <!-- / 左侧栏 -->
 </div>
-<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-<!-- build:minjs js/win8-mobile.min.js -->
-<script src="js/win8-mobile.js?version=0.13" type="text/javascript"></script>
-<!-- endbuild -->
-<!--<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>-->
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+
+<script src="js/win8-mobile.js?version=0.17" type="text/javascript"></script>
+
+<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+<script src="js/iconfont-symbol-container.js"></script>
+
 <script type='text/javascript' src='js/swiper.min.js' charset='utf-8'></script>
+
+<script src="js/plugins/i18n/jquery.i18n.properties.js"></script>
+<script src="js/plugins/i18n/language.js"></script>
 <script>
     //有顶部下载
-    hasAppDown();
+    //hasAppDown();
 
     //未登录
     //unlogin();
 
     $(function () {
-        win8WapSetting.topBarAd(); //顶部优惠
+        //win8WapSetting.topBarAd(); //顶部优惠
     });
 </script>
 

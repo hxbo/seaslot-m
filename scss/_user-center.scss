@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/*!
+scss design by heixaobo  qq:9304600
+*/
+@import "compass", "normalize", "compass/support", "compass/css3", "compass/utilities";
+@import  "retina-sprites","global-variable" ;
+
+/*用户中心*/
+.center-header{
+    .header-bg{
+        background: image_url('center-header-bg.jpg');
+        height:6rem;
+        @include background-size(100%);
+        @include flex-column-align-center;
+        .user-name{
+            color: #fff;
+            font-size:0.8rem;
+        }
+
+    }
+    .account-info{
+        background-color: #fff;
+        @include flex-row;
+        &>div{
+            @include flex-children;
+            text-align: center;
+            padding:0.6rem 0;
+        }
+        .header-img{
+            position: relative;
+            @include flex(0 0 auto);
+            img{
+                width:4.4rem;
+                height:4.4rem;
+                //display: block;
+                border-radius: 50%;
+                border: 0.1rem solid $main-color;
+                @include box-shadow(2px 2px 2px rgba(0,0,0,0.1));
+                position: relative;
+                margin-top: -2.5rem;
+            }
+            .user-level{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 1.1rem;
+                text-align: center;
+                span{
+                    display: inline-block;
+                    font-size: 0.7rem;
+                    min-width:2.4rem;
+                    border: 1px solid $main-color;
+                    color: $main-color;
+                    border-radius: 11px;
+                    padding: 0 10px;
+                    background-color: #fff;
+                    //@include background(linear-gradient(left,  #e81609,#ec7549))
+
+                }
+            }
+        }
+        .balance,.golden-coin{
+            font-size:0.7rem;
+            color: #a2a0a0;
+            line-height: 1.5rem;
+            //@include flex-column-align-center;
+            text-align: center;
+            span{
+                font-size:0.8rem;
+                color: #c54e21;
+                display: inline-block;
+            }
+        }
+        .golden-coin{
+            background:image_url('race-lamp-@2x-120x70.gif') no-repeat center;
+            @include background-size(120px 70px);
+        }
+    }
+}
+.icon-level{
+    display: block;
+}
+.level-diamond{
+    @include image-retina('icon-level-diamond');
+}
+.icon-list{
+    li .item-inner{
+        padding-left: .5rem !important;
+    }
+    .item-inner i{
+        margin-right: .5rem;
+    }
+    .item-inner a{
+        display: block;
+        width: 100%;
+        span{
+            color: #fff;
+        }
+    }
+
+}
+.center-list-icon-info{
+    @include image-retina('center-userinfo');
+}
+.center-list-icon-pwd{
+    @include image-retina('center-pwd');
+}
+.center-list-icon-apply{
+    @include image-retina('center-apply');
+}
+.center-list-icon-cash{
+    @include image-retina('center-cash');
+}
+.center-list-icon-deposit{
+    @include image-retina('center-deposit');
+}
+.center-list-icon-records{
+    @include image-retina('center-records');
+}
+.center-list-icon-redpacket{
+    @include image-retina('center-redpacket');
+}
+.center-list-icon-transfer{
+    @include image-retina('center-transfer');
+}
+.center-list-icon-msg{
+    @include image-retina('center-msg');
+}
+
+.center-btn-wrap{
+    margin:1.0rem 0;
+    @include flex-row;
+    a{
+        @extend %btn-mainColor;
+        @include flex-children;
+        margin-left:.4rem;
+        &:last-of-type{
+            margin-right:.4rem;
+        }
+    }
+}
+.list-block .item-title.label{
+    width: 20%;
+}
+.row-tit{
+    padding-left: 0.55rem;line-height: 1.5rem;margin-top: 1.5rem ;
+}
+.input-tip{
+    font-size:$font-size-normal;
+    padding-left: 0.55rem;
+    color: #666;
+}
+
+
+.bank-list.list-block{
+    ul{
+        background-color: transparent;
+    }
+    .item-inner:after{
+        height: 0;
+    }
+    li{
+        padding-left: 0.5rem;
+        margin-bottom:0.3rem;
+        background-color: #fff;
+    }
+}
+
+.account-balance{
+    color: $main-color;
+    i{
+        font-size:0.6rem;
+    }
+    span{
+        font-size:1.5rem;
+    }
+}
+.list-block.inset{
+    margin: 0;
+}
+
+
+.list-block ul {
+    background: rgba(0,0,0,.3);
+    &:before,&:after{
+        content: none;
+    }
+    .item-inner{
+        &:after{
+            background-color: rgba(255,255,255,0.1);
+        }
+    }
+
+}

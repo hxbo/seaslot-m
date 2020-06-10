@@ -21,9 +21,8 @@
     <link rel="stylesheet" href="css/sm.min.css">
     <link rel="stylesheet" href="css/sm-extend.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <!--<link rel="stylesheet" href="http://www.zhangxinxu.com/study/css/animate.css">-->
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/mobile.css?version=0.0.1">
+    <!--<link rel="stylesheet" href="css/animate.css">-->
 
     <!-- endbuild -->
 
@@ -125,6 +124,11 @@
                     <!--<li><a class="" href="game-real.html"><i class="iconfont icon-caipiao1"></i></a><span>彩票</span></li>-->
                     <li><a class="" href="game-sport.html"><i class="iconfont icon-tiyu"></i></a><span data-i18n-text="sport">体育</span></li>
                     <li><a class="" href="game-chess.html"><i class="iconfont icon-qipai"></i></a><span data-i18n-text="poker">棋牌</span></li>
+                    <li><a class="" href="game.html"><i class="iconfont icon-laohuji1"></i></a><span data-i18n-text="slot">老虎机</span></li>
+                    <li><a class="" href="game-real.html"><i class="iconfont icon-meinv1"></i></a><span data-i18n-text="real">真人</span></li>
+                    <!--<li><a class="" href="game-real.html"><i class="iconfont icon-caipiao1"></i></a><span>彩票</span></li>-->
+                    <li><a class="" href="game-sport.html"><i class="iconfont icon-tiyu"></i></a><span data-i18n-text="sport">体育</span></li>
+                    <li><a class="" href="game-chess.html"><i class="iconfont icon-qipai"></i></a><span data-i18n-text="poker">棋牌</span></li>
                 </ul>
             </div>
             <!-- /. game 分类 -->
@@ -138,7 +142,7 @@
                 </div>
                 <div class="">
                     <div class="game-list">
-                        <ul class="clearfix">
+                        <ul class="">
                             <li><a href="game.html" target="_blank"><img src="images/game-img/lhdb.jpg"
                                                                          alt=""></a><span>连环夺宝</span></li>
                             <li><a href="http://www.163.com"><img src="images/game-img/tgpd.jpg"
@@ -327,8 +331,8 @@
 
 <script src="js/plugins/i18n/jquery.i18n.properties.js"></script>
 <script src="js/plugins/i18n/language.js"></script>
-<script type="text/javascript" charset="UTF-8">
 
+<script type="text/javascript" charset="UTF-8">
 
     //重要通知 调用 20200509
     //win8WapSetting.noticeAlert();
@@ -382,33 +386,7 @@
             $('body').prepend(domain_pop_html);
         }*/
 
-        //新春红包20180208
-        $('.redEnvelope-float-icon').on('click', function (e) {
-            $('.redEnvelope-wrap,.fudai-outer').show();
-            $('.fudai-outer').removeClass("flipsimple out").addClass("zoomIn");
-            $('.hongbao-outer').removeClass("flipsimple in");
-            $('.mask').show();
 
-        });
-        //点击打开红包
-        $('.btn-open-envelope').on('click', function (e) {
-            $('.fudai-outer').removeClass("zoomIn").addClass("flipsimple out");
-            setTimeout(function () {
-                $('.fudai-outer').hide();
-            }, 225);
-            setTimeout(function () {
-                $('.hongbao-outer').show().addClass("flipsimple in");
-            }, 225);
-        });
-        //点击领取红包
-        $('.btn-get-envelope').on('click', function () {
-            $('.redEnvelope-wrap,.mask').hide();
-            $.toast("领取成功，请到用户中心查看。", 3000, 'error-tip ');
-        });
-        //关闭
-        $('.redEnvelope-guanbi').on('click', function (e) {
-            $('.redEnvelope-wrap,.mask').hide();
-        })
     });
 
     $(function () {

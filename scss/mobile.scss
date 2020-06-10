@@ -4,26 +4,11 @@ scss design by heixaobo  qq:9304600
 */
 
 @import "compass", "normalize", "compass/support", "compass/css3", "compass/utilities";
-@import  "retina-sprites","mixin";
+@import  "retina-sprites","mixin","global-variable";
 @import "p_menu";
-@import "language";
+@import "language", "user-center";
 
 
-
-//theme
-$main-color: #caa059; //主题色
-$secondary-color: #fea024; //辅助色
-$third-color: #f94b32; //点缀色
-$fourth-color: #37ae37; //点缀色2
-
-$bgColor1:#f5e8da;
-$bgColor2:#edd5bb;
-
-$font-size-normal: 12px;
-$font-size-medium: 14px;
-$font-size-big: 16px;
-$font-size-lg: 18px;
-$font-family: "Microsoft Yahei", "微软雅黑", "黑体", "宋体";
 a {
     color: $main-color;
 }
@@ -255,7 +240,7 @@ header{
     background: #fff;
     @include background-size(cover);
     .title{
-        color: #373737;
+        color: #fff7f2;
         img{
             width: 110px;
             height: auto;
@@ -302,7 +287,10 @@ header{
         }
     }
 }
-
+.bar-tab .tab-item .icon~.tab-label{
+    top: 0.05rem;
+    font-size: .65rem;
+}
 //left-panel
 .panel-nav{
     $height:2rem;
@@ -400,8 +388,9 @@ header{
     margin:1.2rem 0;
     ul{
         @include flex-row();
+        @include flex-flow(wrap);
         li{
-            @include flex-children();
+            @include flex(0 0 25%);
             text-align: center;
             font-size: 0;
             a{
@@ -455,11 +444,11 @@ header{
         padding:.2rem .3rem ;
         border-radius: 1.4rem;
         text-align: center;
-        color: $main-color;
+        color: #fff;
         @include flex-children();
         &.active{
-            background-color: $main-color;
-            color: #fff;
+            @include background(linear-gradient(left , #ff9e55 #ffda52));
+            color: #000;
         }
     }
 }
@@ -624,9 +613,12 @@ header{
 
 //游戏大厅
 .game-list{
+    ul{
+        display:grid;
+        grid-gap: 10px;
+    }
     li{
-        margin-bottom: .4rem;
-        float: left;
+        width: 100%;
         a{
             position: relative;
             display: block;
@@ -654,25 +646,19 @@ header{
 }
 @media screen and (max-width: 399px) {
     .game-list{
-        li{
-            width:32%;
-            margin-right:2%;
-            &:nth-child(3n){
-                margin-right: 0;
-            }
+        ul{
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
         }
     }
 }
 
 @media screen and (min-width: 400px) {
     .game-list{
-        li{
-            width:23.5%;
-            margin-right:2%;
-            &:nth-child(4n){
-                margin-right: 0;
-            }
-        }
+       ul{
+           grid-template-columns: repeat(4, 1fr);
+           grid-gap: 10px;
+       }
     }
 }
 .pic-list{
@@ -747,8 +733,8 @@ header{
 
 .buttons-row{
     .button {
-        border: 1px solid $main-color;
-        color: $main-color;
+        border: 1px solid #754a41;
+        color: #fff;
         line-height: 1.75rem;
         height: 1.85rem;
         font-size: .7rem;
@@ -760,7 +746,7 @@ header{
         }
     }
     .button.active{
-        background-color: $main-color;
+        @include background(linear-gradient(left,$secondary-color $third-color))
     }
 
     &.wrap-able{
@@ -799,7 +785,7 @@ header{
 }
 
 .content-block{
-    margin:.8rem 0;
+    margin:.5rem 0;
 }
 
 .icon-jiangbei{
@@ -823,32 +809,37 @@ header{
             display: block;
         }
         .real-item-link{
+            margin-top: .5rem;
+            @include display-flex();
+            @include justify-content(space-between);
             a{
-                width: 50%;
+                @include flex(1);
+                margin: 0 6px;
                 height: 46px;
                 line-height: 46px;
+                border-radius: 23px;
                 text-align: center;
-                color: $main-color;
+                color: #fff;
                 display: block;
-                float: left;
                 position: relative;
-                background-color: #f2ece3;
-                &:first-child:after{
+                @include background(linear-gradient(bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.2)));
+                //background-color: rgba(255,255,255,.6);
+                /*&:first-child:after{
                     content: '';
                     position: absolute;
                     width: 1px;
                     right: 0;
                     height: 60%;
                     top: 20%;
-                    background-color: darken(#f2ece3,10%);
-                }
+                    background-color: darken(#845a1d,10%);
+                }*/
                 span{
                     font-size: .8rem;
                     vertical-align: middle;
                 }
                 i{
                     font-size: 1rem;
-                    color: lighten($main-color,15%);
+                    color: #c7c7c7;
                     vertical-align: middle;
                 }
                 &:active{
@@ -862,14 +853,14 @@ header{
 .sub-tab-2{
     border-radius: 0 0 .3rem .3rem;
     overflow: hidden;
-    background-color: #f2ece3;
+    background-color:rgba(0,0,0,.5);
     @include box-shadow(0 0 6px rgba(164,106,24,.25));
     .button{
         font-size: .7rem;
-        color: #d3bb91;
+        color: #fff;
         &.active {
-            color: $main-color;
-            border-color: $main-color;
+            color: #ff6a00;
+            border-color: transparent;
             font-weight: 800;
         }
     }
@@ -1234,180 +1225,6 @@ ol{
         display: inline-block;
         color: #999;
     }
-}
-
-/*用户中心*/
-.center-header{
-    .header-bg{
-        background: image_url('center-header-bg.jpg');
-        height:6rem;
-        @include background-size(100%);
-        @include flex-column-align-center;
-        .user-name{
-            color: #fff;
-            font-size:0.8rem;
-        }
-
-    }
-    .account-info{
-        background-color: #fff;
-        @include flex-row;
-        &>div{
-            @include flex-children;
-            text-align: center;
-            padding:0.6rem 0;
-        }
-        .header-img{
-            position: relative;
-            @include flex(0 0 auto);
-            img{
-                width:4.4rem;
-                height:4.4rem;
-                //display: block;
-                border-radius: 50%;
-                border: 0.1rem solid $main-color;
-                @include box-shadow(2px 2px 2px rgba(0,0,0,0.1));
-                position: relative;
-                margin-top: -2.5rem;
-            }
-            .user-level{
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 1.1rem;
-                text-align: center;
-                span{
-                    display: inline-block;
-                    font-size: 0.7rem;
-                    min-width:2.4rem;
-                    border: 1px solid $main-color;
-                    color: $main-color;
-                    border-radius: 11px;
-                    padding: 0 10px;
-                    background-color: #fff;
-                    //@include background(linear-gradient(left,  #e81609,#ec7549))
-
-                }
-            }
-        }
-        .balance,.golden-coin{
-            font-size:0.7rem;
-            color: #a2a0a0;
-            line-height: 1.5rem;
-            //@include flex-column-align-center;
-            text-align: center;
-            span{
-                font-size:0.8rem;
-                color: #c54e21;
-                display: inline-block;
-            }
-        }
-        .golden-coin{
-            background:image_url('race-lamp-@2x-120x70.gif') no-repeat center;
-            @include background-size(120px 70px);
-        }
-    }
-}
-.icon-level{
-    display: block;
-}
-.level-diamond{
-    @include image-retina('icon-level-diamond');
-}
-.icon-list{
-    li .item-inner{
-        padding-left: .5rem !important;
-    }
-    .item-inner i{
-        margin-right: .5rem;
-    }
-    .item-inner a{
-        display: block;
-        width: 100%;
-        span{
-            color: #666;
-        }
-    }
-
-}
-.center-list-icon-info{
-    @include image-retina('center-userinfo');
-}
-.center-list-icon-pwd{
-    @include image-retina('center-pwd');
-}
-.center-list-icon-apply{
-    @include image-retina('center-apply');
-}
-.center-list-icon-cash{
-    @include image-retina('center-cash');
-}
-.center-list-icon-deposit{
-    @include image-retina('center-deposit');
-}
-.center-list-icon-records{
-    @include image-retina('center-records');
-}
-.center-list-icon-redpacket{
-    @include image-retina('center-redpacket');
-}
-.center-list-icon-transfer{
-    @include image-retina('center-transfer');
-}
-.center-list-icon-msg{
-    @include image-retina('center-msg');
-}
-
-.center-btn-wrap{
-    margin:1.0rem 0;
-    @include flex-row;
-    a{
-        @extend %btn-mainColor;
-        @include flex-children;
-        margin-left:.4rem;
-        &:last-of-type{
-            margin-right:.4rem;
-        }
-    }
-}
-.list-block .item-title.label{
-    width: 20%;
-}
-.row-tit{
-    padding-left: 0.55rem;line-height: 1.5rem;margin-top: 1.5rem ;
-}
-.input-tip{
-    font-size:$font-size-normal;
-    padding-left: 0.55rem;
-    color: #666;
-}
-
-
-.bank-list.list-block{
-    ul{
-        background-color: transparent;
-    }
-    .item-inner:after{
-        height: 0;
-    }
-    li{
-        padding-left: 0.5rem;
-        margin-bottom:0.3rem;
-        background-color: #fff;
-    }
-}
-
-.account-balance{
-    color: $main-color;
-    i{
-        font-size:0.6rem;
-    }
-    span{
-        font-size:1.5rem;
-    }
-}
-.list-block.inset{
-    margin: 0;
 }
 
 //404
