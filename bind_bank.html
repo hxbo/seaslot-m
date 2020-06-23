@@ -3,64 +3,58 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>赢8娱乐</title>
+    <title class="i18n" data-i18n-text='title'></title>
+    <meta id="i18n_pagename" content="index-common">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="icon" type="image/png" href="i/favicon.png">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/sm-extend.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- build:mincss css/win8-style-mobile.min.css -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_425853_40slywqpwyuy2e29.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <!-- endbuild -->
-
-
-
+    <!--<link rel="stylesheet" href="css/animate.css">-->
 </head>
 
 <body>
+
 <div class="page-group">
     <div class="page page-current">
         <header class="bar bar-nav">
             <a class="button button-link button-nav pull-left back" href="user-center.html" data-transition='slide-out'>
-                <span class="iconfont icon-fanhui c-white"> </span></a>
-
-            <h1 class="title">用户资料</h1>
+                <span class="iconfont icon-fanhui c-white"></span>
+            </a>
+            <h1 class="title" data-i18n-text="UserInformation"></h1>
             <a href="javascript:void(0)" class="icon icon-service pull-right c-white"></a>
         </header>
 
         <div class="content">
             <div class="content-block" id="userinfo_tab">
-                <p class="buttons-row"><a href="user_info.html" class="button">基本资料</a><a href="bind_bank.html" class="button  active">收款方式管理</a><a href="msg_subscribe.html" class="button">短信订阅</a></p>
+                <p class="buttons-row">
+                    <a href="user_info.html" class="button " data-i18n-text="basicData"></a>
+                    <a href="bind_bank.html" class="button active" data-i18n-text="bankCard"></a>
+                    <a href="msg_subscribe.html" class="button" data-i18n-text="SMSsubscription"></a>
+                </p>
             </div>
 
             <div class="card">
-                <div class="card-header"><i class="iconfont icon-creditcard" style="color: #ff752f;"> <span style="color: #666;">招商银行</span></i> </div>
+                <div class="card-header"><i class="iconfont icon-creditcard" style="color: #ff752f;"> <span style="color: #666;">China Merchants Bank</span></i> </div>
                 <div class="card-content">
                     <div class="card-content-inner">6225 **** **** 9180</div>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-header"><i class="iconfont icon-creditcard" style="color: #ff752f;"> <span style="color: #666;">中国银行</span></i> </div>
+                <div class="card-header"><i class="iconfont icon-creditcard" style="color: #ff752f;"> <span style="color: #666;">Bank of China</span></i> </div>
                 <div class="card-content">
                     <div class="card-content-inner">6225 **** **** 9180</div>
                 </div>
             </div>
 
-
-            <div class="card">
-                <div class="card-header"><i class="iconfont icon-zhifubao" style="color: #009fe8"> <span style="color: #666;">支付宝</span></i> </div>
-                <div class="card-content">
-                    <div class="card-content-inner">hxb001121</div>
-                </div>
-            </div>
 
 
             <div class="content-block">
-                <p><a href="bind_bank_addnew.html" class="button button-big button-round button-fill button-warning"><i class="fa fa-plus-circle"></i> 新增收款方式 </a></p>
+                <p><a href="bind_bank_addnew.html" class="button button-big button-round button-fill button-warning"><i class="fa fa-plus-circle" ></i> <span data-i18n-text="addNewCard"></span> </a></p>
             </div>
 
         </div><!-- /. content -->
@@ -68,11 +62,18 @@
 
 </div>
 
-<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-<!-- build:minjs js/win8-mobile.min.js -->
-<script src="js/win8-mobile.js" type="text/javascript"></script>
-<!-- endbuild -->
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+
+<script src="js/win8-mobile.js?version=0.17" type="text/javascript"></script>
+
+<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+<script src="js/iconfont-symbol-container.js"></script>
+
+<script type='text/javascript' src='js/swiper.min.js' charset='utf-8'></script>
+
+<script src="js/plugins/i18n/jquery.i18n.properties.js"></script>
+<script src="js/plugins/i18n/language.js"></script>
 </body>
 </html>

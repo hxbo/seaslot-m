@@ -3,36 +3,38 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>赢8娱乐</title>
+    <title class="i18n" data-i18n-text='title'></title>
+    <meta id="i18n_pagename" content="index-common">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="icon" type="image/png" href="i/favicon.png">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="css/sm-extend.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- build:mincss css/win8-style-mobile.min.css -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_425853_3w2y99r15ihhbyb9.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <!-- endbuild -->
-
-
-
+    <!--<link rel="stylesheet" href="css/animate.css">-->
 </head>
 
 <body>
+
 <div class="page-group">
     <div class="page page-current">
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left back" href="user-center.html" data-transition='slide-out'>                 <span class="iconfont icon-fanhui c-white"> </span></a>
-
-            <h1 class="title">用户资料</h1>
+            <a class="button button-link button-nav pull-left back" href="user-center.html" data-transition='slide-out'>
+                <span class="iconfont icon-fanhui c-white"></span>
+            </a>
+            <h1 class="title" data-i18n-text="UserInformation"></h1>
             <a href="javascript:void(0)" class="icon icon-service pull-right c-white"></a>
         </header>
 
         <div class="content">
             <div class="content-block" id="userinfo_tab">
-                <p class="buttons-row"><a href="user_info.html" class="button active">基本资料</a><a href="bind_bank.html" class="button">收款方式管理</a><a href="msg_subscribe.html" class="button">短信订阅</a></p>
+                <p class="buttons-row">
+                    <a href="user_info.html" class="button active" data-i18n-text="basicData"></a>
+                    <a href="bind_bank.html" class="button" data-i18n-text="bankCard"></a>
+                    <a href="msg_subscribe.html" class="button" data-i18n-text="SMSsubscription"></a>
+                </p>
             </div>
 
             <!-- 列表 -->
@@ -42,7 +44,7 @@
                     <li>
                         <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-title label">账号</div>
+                                <div class="item-title label" data-i18n-text="account"></div>
                                 <div class="item-input">
                                     <input type="text" placeholder="qyun12323" disabled>
                                 </div>
@@ -52,9 +54,9 @@
                     <li>
                         <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-title label">姓名</div>
+                                <div class="item-title label" data-i18n-text="fullName"></div>
                                 <div class="item-input">
-                                    <input type="text" placeholder="请输入真实姓名">
+                                    <input type="text" placeholder="">
                                 </div>
                             </div>
                         </div>
@@ -62,9 +64,9 @@
                     <li>
                         <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-title label">电话</div>
+                                <div class="item-title label" data-i18n-text="phoneNumber"></div>
                                 <div class="item-input">
-                                    <input type="tel" placeholder="手机号码" class="">
+                                    <input type="tel" placeholder="" class="">
                                 </div>
                             </div>
                         </div>
@@ -72,9 +74,9 @@
                     <li>
                         <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-title label">邮箱</div>
+                                <div class="item-title label" data-i18n-text="Email"></div>
                                 <div class="item-input">
-                                    <input type="email" placeholder="邮箱" class="">
+                                    <input type="email" placeholder="" class="">
                                 </div>
                             </div>
                         </div>
@@ -85,7 +87,7 @@
             <!-- /.列表 -->
 
             <div class="content-block">
-                <p><a href="#" class="button button-big button-round button-fill button-warning">提交 </a></p>
+                <p><a href="#" class="button button-big button-round button-fill button-warning" data-i18n-text="btnSubmit">submit </a></p>
             </div>
 
         </div><!-- /. content -->
@@ -93,11 +95,18 @@
 
 </div>
 
-<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-<!-- build:minjs js/win8-mobile.min.js -->
-<script src="js/win8-mobile.js" type="text/javascript"></script>
-<!-- endbuild -->
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+
+<script src="js/win8-mobile.js?version=0.17" type="text/javascript"></script>
+
+<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+<script src="js/iconfont-symbol-container.js"></script>
+
+<script type='text/javascript' src='js/swiper.min.js' charset='utf-8'></script>
+
+<script src="js/plugins/i18n/jquery.i18n.properties.js"></script>
+<script src="js/plugins/i18n/language.js"></script>
 </body>
 </html>

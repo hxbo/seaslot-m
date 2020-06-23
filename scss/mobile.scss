@@ -1066,8 +1066,13 @@ ol{
     margin: 0 0 1rem;
     .item-content{
         padding-left: 0;
+        background: rgba(0,0,0,0.3);
         .item-inner{
             padding-left: 0.3rem;
+            color: #968d8d;
+            input{
+                color: #fff;
+            }
         }
     }
 }
