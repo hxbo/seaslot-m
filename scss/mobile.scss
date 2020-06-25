@@ -393,6 +393,7 @@ header{
             @include flex(0 0 25%);
             text-align: center;
             font-size: 0;
+            margin-bottom: .6rem;
             a{
                 display: inline-block;
                 width: 64px;
@@ -684,6 +685,7 @@ header{
     &.col-2{
         li{
             width: 100%;
+            margin-bottom: .6rem;
             a{
                 padding:0 ;
             }
@@ -1017,6 +1019,34 @@ ol{
     border-radius: .2rem;
     font-size: .7rem;
 }
+.card-header{
+    padding-left: 1.8rem;
+    input[type="radio"]{
+        position: absolute;
+        left: 0.3rem;
+        top: 0.8rem;
+        width: 18px;
+        height: 18px;
+        &:checked ~ span{
+            color: #ff5348;
+            font-weight: bold;
+        }
+    }
+}
+.card-bank-account{
+    .card-content-inner{
+        padding: .3rem .3rem 0.3rem 1.8rem;
+        font-size: .8rem;
+        .copybtn{
+            float: right;
+            font-size: .75rem;
+            border-radius: .1rem;
+            padding: 2px 4px;
+            background-color: #f0f0f0;
+            color: #999;
+        }
+    }
+}
 //table
 .table,.main_table{
     $table-theme:$main-color;
@@ -1085,7 +1115,7 @@ ol{
     background: image_url("bg-login.jpg") top no-repeat #d8d8dc;
     min-height: 100%;
     @include background-size(100%);
-    padding: 7.5rem .8rem 2rem;
+    padding: 9rem .8rem 2rem;
     &.reg-wrap{
         background-image: image_url("bg-reg.jpg");
     }
@@ -1861,11 +1891,11 @@ $flipDuration:225ms;
     margin-right: auto;
     .recharge{
         border: 2px solid $main-color;
-        background: image_url('icon-amount.png') no-repeat 5px center #fff;
+        background: image_url('icon-amount.png') no-repeat 5px center transparent;
         @include background-size(36px 36px);
         padding-left: 2.8rem;
-        font-size: 1.2rem;
-        color: $main-color;
+        font-size: 1.8rem;
+        color: #ffc800;
     }
     input{
         width: 100%;
@@ -1902,12 +1932,12 @@ $flipDuration:225ms;
             a{
                 display: block;
                 border-radius: .1rem;
-                font-size: .9rem;
-                border: 1px solid  #caa059;
-                color: #666;
+                font-size: 0.9rem;
+                border: 1px solid rgba(255,255,255,0.3);
+                color: #ffffff;
                 line-height: 1.6rem;
                 text-align: center;
-                background-color: #fff;
+                background-color: transparent;
             }
         }
     }
@@ -1979,4 +2009,32 @@ $flipDuration:225ms;
         font-size: 2rem;
     }
 }
+.bar.bar-nav.datetime-picker-header{
+    background: rgba(0,0,0,0.8);
+    .title{
+        color: #a197a5;
+    }
+}
 
+//placeholder yanse
+$placeholderColor: #ffa670;
+$placeholderFontSize: 0.9rem;
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: $placeholderColor;
+    font-size: $placeholderFontSize;
+}
+
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color: $placeholderColor;
+    font-size: $placeholderFontSize;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: $placeholderColor;
+    font-size: $placeholderFontSize;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: $placeholderColor;
+    font-size: $placeholderFontSize;
+}

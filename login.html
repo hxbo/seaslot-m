@@ -3,24 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>赢8娱乐</title>
+    <title class="i18n" data-i18n-text='title'></title>
+    <meta id="i18n_pagename" content="index-common">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="icon" type="image/png" href="i/favicon.png">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="icon" type="image/png" href="i/favicon.png"><link rel="stylesheet" href="css/light7.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- build:mincss css/win8-style-mobile.min.css -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_425853_3w2y99r15ihhbyb9.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <!-- endbuild -->
-    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-    <!-- build:minjs js/win8-mobile.min.js -->
-    <script src="js/win8-mobile.js" type="text/javascript"></script>
-    <!-- endbuild -->
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <!--<link rel="stylesheet" href="css/animate.css">-->
+    <style>
+        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+            color: #666;
+            font-size: 14px;
+        }
+
+        input:-moz-placeholder, textarea:-moz-placeholder {
+            color: #666;
+            font-size: 14px;
+        }
+
+        input::-moz-placeholder, textarea::-moz-placeholder {
+            color: #666;
+            font-size: 14px;
+        }
+
+        input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
@@ -30,7 +42,7 @@
             <a class="button button-link button-nav pull-left back" href="index.html" data-transition='slide-out'>
                 <span class="iconfont icon-fanhui c-white"> </span></a>
             <!--<a class="icon icon-menu pull-left open-panel c-white" data-panel=".panel-left"></a>-->
-            <h1 class="title">登录</h1>
+            <h1 class="title">Sign in</h1>
             <a href="javascript:void(0)" class="icon icon-service pull-right c-white"></a>
         </header>
 
@@ -40,33 +52,39 @@
                 <form name="realAccount" id="realAccount" action="" method="post">
 
                     <div class="row" style="overflow: inherit">
-                        <input autocomplete="off" type="text" class="login-input" name="username" id="username" maxlength="15" placeholder="小写k开头,长度4~15个字符" value="k"/>
+                        <input autocomplete="off" type="text" class="login-input" name="username" id="username" maxlength="15" placeholder="Starts with 'k' , 4-15 characters long" value="k"/>
                     </div>
                     <div class="row" style="overflow: inherit">
                         <input class="login-input input-pwd" name="password" maxlength="10" id="password" type="password"
-                               placeholder="长度须在8~10之间"/>
+                               placeholder="Password length must be between 8 and 10"/>
                     </div>
                     <div class="row">
-                        <input type="checkbox" id="remmberMe" name="remmberMe" style="width: .8rem;height: .8rem; vertical-align: middle;"> <label style="vertical-align: middle;" for="remmberMe">记住用户（下次自动登录哦）</label>
+                        <input type="checkbox" id="remmberMe" name="remmberMe" style="width: .8rem;height: .8rem; vertical-align: middle;"> <label style="vertical-align: middle;color: #9a9a9a;" for="remmberMe">remember me</label>
                     </div>
-                    <button class="submit-btn btn-big" type="button" id="submitBtn" onclick="javascript:login()">登录</button>
+                    <button class="submit-btn btn-big" type="button" id="submitBtn" onclick="javascript:login()">Login</button>
 
                 </form>
 
                 <div class="row" style="padding: .5rem 0">
-                    <div class="col-50" style="margin-left: 0"><a href="reg.html">没有账号？立即注册</a></div>
-                    <div class="col-50 ta-r"><a href="forget-pwd.html">忘记密码</a></div>
+                    <div class="col-50" style="margin-left: 0"><a href="reg.html">Sign up</a></div>
+                    <div class="col-50 ta-r"><a href="forget-pwd.html">Find password</a></div>
                 </div>
 
             </div>
 
         </div><!-- /. content -->
     </div>
-
-
 </div>
-<script>
 
+<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
+<script src="js/win8-mobile.js?version=0.17" type="text/javascript"></script>
+<script type='text/javascript' src='js/light7.js' charset='utf-8'></script>
+<script src="js/iconfont-symbol-container.js"></script>
+<script src="js/plugins/i18n/jquery.i18n.properties.js"></script>
+<script src="js/plugins/i18n/language.js"></script>
+
+
+<script>
     var isusername = /^k/;
 
     function numberOnly(e) {
@@ -92,20 +110,20 @@
         var e = /^k/;
 
         if (a == '') {
-            $.toast("帐号不能为空",2000, 'error-tip top-tip');
+            $.toast("Account cannot be empty",2000, 'error-tip top-tip');
             return false
         } else if (a.length < 5 || a.length > 15) {
-            $.toast("帐号长度须在5~15之间",2000, 'error-tip top-tip');
+            $.toast("Account length must be between 5 and 15",2000, 'error-tip top-tip');
             return false
         } else if (!e.test(a)) {
-            $.toast("帐号必须小写字母k开头",2000, 'error-tip top-tip');
+            $.toast("Account must start with a lowercase k",2000, 'error-tip top-tip');
             return false
         }
         if (b == '') {
-            $.toast("登陆密码不能为空",2000, 'error-tip top-tip');
+            $.toast("Password cannot be empty",2000, 'error-tip top-tip');
             return false
         } else if (b.length <= 7 || b.length > 10) {
-            $.toast("密码长度须在8~10之间",2000, 'error-tip top-tip');
+            $.toast("Password length must be between 8 and 10",2000, 'error-tip top-tip');
             return false
         }
 
@@ -121,7 +139,7 @@
             password: c
         }, function(a) {
             if (a.errormsg == 'success') {
-                $.toast("发送成功,请输入收到的验证码",2000, 'error-tip top-tip');
+                $.toast("Successfully sent, please enter the received verification code",2000, 'error-tip top-tip');
             }
             else {
                 $.toast(a.errormsg,2000, 'error-tip top-tip');

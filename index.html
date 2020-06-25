@@ -18,8 +18,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <link rel="icon" type="image/png" href="i/favicon.png">
-    <link rel="stylesheet" href="css/sm.min.css">
-    <link rel="stylesheet" href="css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/light7.css">
+    <link rel="stylesheet" href="css/light7-swiper.css">
+
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/mobile.css?version=0.0.1">
     <!--<link rel="stylesheet" href="css/animate.css">-->
@@ -61,24 +62,20 @@
         <!--/. 登录前 -->
         <nav class="bar bar-tab">
             <a class="tab-item external active" href="index.html">
-                <span class="icon iconfont icon-shouye"></span>
-                <span class="tab-label" data-i18n-text="navHome">首页</span>
+                <span class="icon iconfont icon-shouye1"></span>
+                <span class="tab-label" data-i18n-text="navHome">home</span>
             </a>
-            <a class="tab-item external" href="game.html">
-                <span class="icon iconfont icon-youxi"></span>
-                <span class="tab-label" data-i18n-text="navGames">游戏中心</span>
+            <a class="tab-item external" href="prefer.html">
+                <span class="icon iconfont icon-youhui1"></span>
+                <span class="tab-label" data-i18n-text="navpromo">promo</span>
             </a>
             <a class="tab-item external" href="#">
-                <span class="icon iconfont icon-kefu2" ></span>
-                <span class="tab-label" data-i18n-text="navService">客服</span>
+                <span class="icon iconfont icon-chat" ></span>
+                <span class="tab-label" data-i18n-text="navliveChat">live chat</span>
             </a>
-            <a class="tab-item external" href="onlinepaystart.html">
-                <span class="icon iconfont icon-chongzhi"></span>
-                <span class="tab-label" data-i18n-text="navRecharge">充值</span>
-            </a>
-            <a class="tab-item external" href="user-center.html">
-                <span class="icon iconfont icon-members"></span>
-                <span class="tab-label" data-i18n-text="navUserCenter">会员中心</span>
+            <a class="tab-item external " href="user-center.html">
+                <span class="icon iconfont icon-wodeA"></span>
+                <span class="tab-label" data-i18n-text="navProfile">profile</span>
             </a>
         </nav>
         <div class="content">
@@ -117,18 +114,17 @@
             <!-- /.登录按钮 -->
 
             <!-- game 分类 -->
-            <div class="game-category ">
+            <div class="game-category">
                 <ul>
-                    <li><a class="" href="game.html"><i class="iconfont icon-laohuji1"></i></a><span data-i18n-text="slot">老虎机</span></li>
-                    <li><a class="" href="game-real.html"><i class="iconfont icon-meinv1"></i></a><span data-i18n-text="real">真人</span></li>
-                    <!--<li><a class="" href="game-real.html"><i class="iconfont icon-caipiao1"></i></a><span>彩票</span></li>-->
-                    <li><a class="" href="game-sport.html"><i class="iconfont icon-tiyu"></i></a><span data-i18n-text="sport">体育</span></li>
-                    <li><a class="" href="game-chess.html"><i class="iconfont icon-qipai"></i></a><span data-i18n-text="poker">棋牌</span></li>
-                    <li><a class="" href="game.html"><i class="iconfont icon-laohuji1"></i></a><span data-i18n-text="slot">老虎机</span></li>
-                    <li><a class="" href="game-real.html"><i class="iconfont icon-meinv1"></i></a><span data-i18n-text="real">真人</span></li>
-                    <!--<li><a class="" href="game-real.html"><i class="iconfont icon-caipiao1"></i></a><span>彩票</span></li>-->
-                    <li><a class="" href="game-sport.html"><i class="iconfont icon-tiyu"></i></a><span data-i18n-text="sport">体育</span></li>
-                    <li><a class="" href="game-chess.html"><i class="iconfont icon-qipai"></i></a><span data-i18n-text="poker">棋牌</span></li>
+                    <li><a class="" href="game.html"><i class="iconfont icon-laohuji1"></i></a><span data-i18n-text="slot">Slots</span></li>
+                    <li><a class="" href="#"><i class="iconfont icon-duchangpuke"></i></a><span data-i18n-text="LiveCasino">Live Casino</span></li>
+                    <li><a class="" href="#"><i class="iconfont icon-youxi"></i></a><span data-i18n-text="ESports">E-Sports</span></li>
+                    <li><a class="" href="#"><i class="iconfont icon-yu"></i></a><span data-i18n-text="Fishing">Fishing</span></li>
+
+                    <li><a class="" href="#"><i class="iconfont icon-tiyu"></i></a><span data-i18n-text="sport">Sport</span></li>
+                    <li><a class="" href="#"><i class="iconfont icon-caipiao2"></i></a><span data-i18n-text="Lottery">Lottery</span></li>
+                    <li><a class="" href="#"><i class="iconfont icon-ji"></i></a><span data-i18n-text="Cockfight">Cockfight</span></li>
+                    <li><a class="" href="#"><i class="iconfont icon-qipai"></i></a><span data-i18n-text="poker">Poker</span></li>
                 </ul>
             </div>
             <!-- /. game 分类 -->
@@ -137,7 +133,7 @@
             <!-- 电子游戏 -->
             <div class="block-wrap">
                 <div class="block-title clearfix">
-                    <div class="title-outer" data-i18n-text="computerGame">电子游戏</div>
+                    <div class="title-outer" data-i18n-text="HotGames">Hot Games</div>
                     <b><i></i></b>
                 </div>
                 <div class="">
@@ -163,7 +159,7 @@
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-youxi1"></use>
                         </svg>
-                        <b data-i18n-text="EnterGameHall">进入游戏大厅</b>
+                        <b data-i18n-text="MoreGames">More Games</b>
                     </a>
                 </div>
             </div>
@@ -317,13 +313,10 @@
 </div>
 <!--/. 弹出菜单 -->
 
-<script type='text/javascript' src='js/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
 
 <script src="js/win8-mobile.js?version=0.17" type="text/javascript"></script>
-
-<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/light7.js' charset='utf-8'></script>
 <script src="js/iconfont-symbol-container.js"></script>
 
 <script type='text/javascript' src='js/swiper.min.js' charset='utf-8'></script>

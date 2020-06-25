@@ -2,7 +2,7 @@
  * Created by Administrator on 2020/4/21.
  * Edit by Administrator on
  */
-let iconfontPath = "font_425853_ma33zjyj9h",
+let iconfontPath = "font_425853_6z4z5tu9en9",
     jsUrl =  " //at.alicdn.com/t/"+ iconfontPath +".js ",
     cssUrl = "//at.alicdn.com/t/"+ iconfontPath +".css";
 

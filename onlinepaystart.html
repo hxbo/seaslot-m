@@ -3,29 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>赢8娱乐</title>
+    <title class="i18n" data-i18n-text='title'></title>
+    <meta id="i18n_pagename" content="index-common">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- 自定义应用名称 -->
+    <meta name="application-name" content="Sea Slot">
+
+    <!-- Hiding Safari User Interface Components -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Changing the Status Bar Appearance -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
     <link rel="icon" type="image/png" href="i/favicon.png">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="css/light7.css">
     <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- build:mincss css/win8-style-mobile.min.css -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_425853_3w2y99r15ihhbyb9.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="css/mobile.css?version=0.0.1">
+
 
     <style type="text/css">
-        .pay-style-icon {
-            width: 1.6em; height: 1.6em;
-            vertical-align: -0.15em;
+        .icon {
+            width: 1.4em; height: 1.4em;
+            vertical-align: middle;
             fill: currentColor;
             overflow: hidden;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: .4rem;
+            margin-right: .15rem;
         }
     </style>
 
@@ -35,329 +36,245 @@
 <div class="page-group">
     <div class="page page-current">
         <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left back" href="index.html" data-transition='slide-out'>                 <span class="iconfont icon-fanhui c-white"> </span></a>
+            <a class="button button-link button-nav pull-left back" href="user-center.html" data-transition='slide-out'>                 <span class="iconfont icon-fanhui c-white"> </span></a>
 
-            <h1 class="title">存款</h1>
+            <h1 class="title">Deposit</h1>
             <a href="javascript:void(0)" class="icon icon-service pull-right c-white"></a>
         </header>
-        <nav class="bar bar-tab">
-            <a class="tab-item external" href="index.html">
-                <span class="icon icon-index"></span>
-                <span class="tab-label">首页</span>
-            </a>
-            <a class="tab-item external" href="game.html" >
-                <span class="icon icon-game"></span>
-                <span class="tab-label">游戏大厅</span>
-            </a>
-            <a class="tab-item external active" href="onlinepaystart.html">
-                <span class="icon icon-prefer"></span>
-                <span class="tab-label">充值</span>
-            </a>
-            <a class="tab-item external" href="user-center.html">
-                <span class="icon icon-user"></span>
-                <span class="tab-label">会员中心</span>
-            </a>
-        </nav>
-        <div class="content">
-            <div class="content-block swipe-able">
-                <p class="buttons-row  ">
-                    <a href="onlinepaystart-weixin.html" class="button active">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-weixinzhifu"></use>
-                        </svg>
-                        微信支付</a>
-                    <a href="onlinepaystart-alipay.html" class="button ">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-zhifubao1"></use>
-                        </svg>
-                        支付宝</a>
-                    <a href="#" class="button">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-kuaijiezhifu"></use>
-                        </svg>
-                        快捷</a>
-                    <a href="#" class="button">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-yunshanfuzhifu"></use>
-                        </svg>
-                        云闪付</a>
-                    <a href="#" class="button">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-yinlian"></use>
-                        </svg>
-                        银联</a>
-                    <a href="onlinepaystart.html" class="button ">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-shoujiyinhangc"></use>
-                        </svg>
-                        手机银行</a>
-                    <a href="#" class="button ">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-wangyin"></use>
-                        </svg>
-                        网银</a>
-                    <a href="#" class="button ">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-QR"></use>
-                        </svg>
-                        微信链接</a>
-                    <a href="#" class="button ">
-                        <svg class="pay-style-icon" aria-hidden="true">
-                            <use xlink:href="#icon-zhuanzhang1"></use>
-                        </svg>
-                        银行转账</a>
-                </p>
-            </div>
-            <form action="">
-                <!-- 列表 -->
-                <div class="list-block">
-                    <ul>
-                        <li>
-                            <div class="item-content">
-                                <div class="item-inner">
-                                    <div class="item-title label" style="width: 30%">登录账号</div>
-                                    <div class="item-input">
-                                        qyun123
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="item-content">
-                                <div class="item-inner">
-                                    <div class="item-title label" style="width: 30%">充值金额</div>
-                                    <div class="item-input">
-                                        <input type="number" placeholder="请输入充值金额" >
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+
+
+        <div class="content payment-content" style="background: transparent">
+            <div class="content-block" id="userinfo_tab">
+                <div class=" buttons-row">
+                    <a href="#tab1" class="tab-link active button">Pay Online</a>
+                    <a href="#tab2" class="tab-link button">Bank Transfer</a>
                 </div>
-                <div class="list-block bank-list">
-                    <ul>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/gongshang.gif" >
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/zhaohang.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/nongye.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/jianshe.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/beijing.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/jiaotong.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/xingye.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/huaxia.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/minsheng.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/shangpufa.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/zhongguo.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/pingan.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/buohai.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/zhongxin.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/youzheng.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/guangfa.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/shanghai.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-                        <li>
-                            <label class="label-checkbox item-content">
-                                <input type="radio" name="my-radio">
-                                <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
-                                <div class="item-inner">
-                                    <div class="item-title-row">
-                                        <img src="images/banklogo/guangda.gif">
-                                    </div>
-                                </div>
-                            </label>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <!-- /.列表 -->
-
                 <div class="content-block">
-                    <p><a href="#" class="button button-big button-round button-fill button-warning">提交 </a></p>
-                </div>
+                    <div class="tabs">
+                        <div id="tab1" class="tab active">
+                            <div class="" style="padding: 1rem;color: #ffa670;">
+                                Max/Min Limit :MYR 100.00 / 50000.00
+                            </div>
+                            <form action="">
+                                <div class="block-input" style="margin-bottom: 1rem;">
+                                    <input class="recharge" type="number" placeholder="Deposit Amount" >
+                                </div>
 
-            </form>
+                                <div class="quick-input">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">100</a></li>
+                                        <li><a href="javascript:void(0)">500</a></li>
+                                        <li><a href="javascript:void(0)">2000</a></li>
+                                        <li><a href="javascript:void(0)">5000</a></li>
+                                        <li><a href="javascript:void(0)">10000</a></li>
+                                        <li><a href="javascript:void(0)">20000</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 选择银行 -->
+
+                                <div class="item-title row-tit"> <span data-i18n-text="bankName">Bank name</span> <span class="c-red">*</span></div>
+                                <div class="list-block">
+                                    <div class="item-content ">
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <select style="color: #ffa670;" name="bank" id="usertag-form-cashoutbank_bank" class="user-tag-form-select">
+                                                    <option value="">choose bank</option>
+                                                    <option value="MAYBANK">MAYBANK</option>
+                                                    <option value="PUBLIC BANK">PUBLIC BANK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--/. 选择银行 -->
+                                <div class="content-block">
+                                    <p><a href="#" class="button button-big button-round button-fill button-warning" data-i18n-text="btnSubmit"> </a></p>
+                                </div>
+                                <div class="pay-tips ta-c">
+                                    2% transfer discount will be added automatically after recharge.
+                                </div>
+                            </form>
+                        </div>
+                        <div id="tab2" class="tab ">
+                            <div class="" style="padding: 1rem;color: #ffa670;">
+                                Max/Min Limit :MYR 100.00 / 50000.00
+                            </div>
+                            <form action="">
+                                <div class="block-input" style="margin-bottom: 1rem;">
+                                    <input class="recharge" type="number" placeholder="Deposit Amount" >
+                                </div>
+
+                                <div class="quick-input">
+                                    <ul>
+                                        <li><a href="javascript:void(0)">100</a></li>
+                                        <li><a href="javascript:void(0)">500</a></li>
+                                        <li><a href="javascript:void(0)">2000</a></li>
+                                        <li><a href="javascript:void(0)">5000</a></li>
+                                        <li><a href="javascript:void(0)">10000</a></li>
+                                        <li><a href="javascript:void(0)">20000</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="">
+                                    <div class="item-title row-tit"> <span data-i18n-text="BankAccount">Bank Account</span> <span class="c-red">*</span></div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <label>
+                                                <input type="radio" name="bankaccount" />
+                                                <span class="">
+                                                <img  src="images/banklogo/maybank.png" height="32" width="32" style="vertical-align: middle; "/>
+                                                <span style="vertical-align: middle;">Maybank Berhad</span>
+                                            </span>
+                                            </label>
+
+                                        </div>
+                                        <div class="card-content card-bank-account">
+                                            <div class="card-content-inner" >
+                                                <span>SeaSlot 666</span>
+                                                <a class="copybtn"  href="javascript:void(0)" data-clipboard-text="SeaSlot 666">copy</a>
+                                            </div>
+                                            <div class="card-content-inner">
+                                                <span>6080-0455-4454</span>
+                                                <a class="copybtn" href="javascript:void(0)" data-clipboard-text="6080-0455-4454">copy</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <label>
+                                                <input type="radio" name="bankaccount" />
+                                                <span class="">
+                                                    <img  src="images/banklogo/cimbbank.png" height="32" width="32" style="vertical-align: middle; "/>
+                                                    <span style="vertical-align: middle;">CIMB Bank Berhad</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="card-content card-bank-account">
+                                            <div class="card-content-inner" >
+                                                <span>SeaSlot 777</span>
+                                                <a class="copybtn"  href="javascript:void(0)" data-clipboard-text="SeaSlot 777">copy</a>
+                                            </div>
+                                            <div class="card-content-inner">
+                                                <span>10454-00545-0054</span>
+                                                <a class="copybtn" href="javascript:void(0)" data-clipboard-text="10454-00545-0054">copy</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <label >
+                                                <input type="radio" name="bankaccount" />
+                                                <span class="">
+                                                <img  src="images/banklogo/bank-simpanan.png" height="32" width="32" style="vertical-align: middle; "/>
+                                                <span style="vertical-align: middle;">Bank Simpanan Nasional</span>
+                                            </span>
+                                          </label>
+
+                                        </div>
+                                        <div class="card-content card-bank-account">
+                                            <div class="card-content-inner" >
+                                                <span>SeaSlot 888</span>
+                                                <a class="copybtn"  href="javascript:void(0)" data-clipboard-text="SeaSlot 888">copy</a>
+                                            </div>
+                                            <div class="card-content-inner">
+                                                <span>33333-00545-0054</span>
+                                                <a class="copybtn" href="javascript:void(0)"data-clipboard-text="33333-00545-0054">copy</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="item-title row-tit"> <span data-i18n-text="DepositTime">Deposit Time</span> <span class="c-red">*</span></div>
+                                    <div class="list-block">
+                                        <div class="item-content ">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input type="text" id='datetime-picker' placeholder="Deposit Time"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="item-title row-tit"> <span data-i18n-text="ReferenceID">Reference ID</span> <span class="c-red">*</span></div>
+                                    <div class="list-block">
+                                        <div class="item-content ">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input type="text"  placeholder="Reference ID"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="item-title row-tit"> <span data-i18n-text="UploadReceipt">Upload Receipt</span> <span class="c-red">*</span></div>
+                                    <div class="list-block">
+                                        <div class="item-content ">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input type="file"  placeholder="Upload Receipt"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content-block">
+                                    <p><a href="#" class="button button-big button-round button-fill button-warning" data-i18n-text="btnSubmit"> </a></p>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div><!-- /. content -->
     </div>
 
 </div>
 
-<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='//at.alicdn.com/t/font_425853_o2rw1xwvh2.js' charset='utf-8'></script>
 
-<!-- build:minjs js/win8-mobile.min.js -->
-<script src="js/win8-mobile.js" type="text/javascript"></script>
-<!-- endbuild -->
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
+<script src="js/win8-mobile.js?version=0.17" type="text/javascript"></script>
+<script type='text/javascript' src='js/light7.js' charset='utf-8'></script>
+<script src="js/iconfont-symbol-container.js"></script>
+<script src="js/plugins/clipboard/clipboard.js"></script>
+
+<script type='text/javascript' src='js/swiper.min.js' charset='utf-8'></script>
+
+<script src="js/plugins/i18n/jquery.i18n.properties.js"></script>
+<script src="js/plugins/i18n/language.js"></script>
+<script>
+    $(function () {
+        $('.quick-input a').on('click',function() {
+            let $recharge = $(this).parents('form').find('.recharge');
+            let num = $(this).text();
+            $recharge.val(num);
+        });
+        $("#datetime-picker").datetimePicker({
+                toolbarTemplate: '<header class="bar bar-nav datetime-picker-header">\
+                <button class="button button-link pull-right close-picker">ok</button>\
+                <h1 class="title">enter date and time</h1>\
+                </header>'
+        });
+    });
+
+    var clipboard = new ClipboardJS('.copybtn');
+    clipboard.on('success', function(e) {
+        $.toast("复制成功");
+        e.clearSelection();
+    });
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+</script>
 </body>
 </html>

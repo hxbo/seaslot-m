@@ -58,7 +58,7 @@ var getNavLanguage = function(){
 /**
  * 设置语言类型： 默认为中文
  */
-var i18nLanguage = "zh-CN";
+var i18nLanguage = "en";
 
 /*
 设置一下网站支持的语言种类
