@@ -56,14 +56,14 @@ var getNavLanguage = function(){
 }
 
 /**
- * 设置语言类型： 默认为中文
+ * 设置语言类型： 默认英文
  */
-var i18nLanguage = "en";
+var i18nLanguage = "en_US";
 
 /*
 设置一下网站支持的语言种类
  */
-var webLanguage = ['zhCN',  'en'];
+var webLanguage = ['zh_CN',  'en_US'];
 
 /**
  * 执行页面i18n方法
@@ -110,6 +110,7 @@ var execI18n = function(){
     /*
     这里需要进行i18n的翻译
      */
+
     jQuery.i18n.properties({
         name : sourceName, //资源文件名称
         path : 'i18n/' + i18nLanguage +'/', //资源文件路径
@@ -129,7 +130,6 @@ var execI18n = function(){
                 }
             });
             console.log("写入完毕");
-
 
             $('[data-i18n-placeholder]').each(function () {
                 $(this).attr('placeholder', $.i18n.prop($(this).data('i18n-placeholder')));
@@ -159,7 +159,6 @@ $(function(){
     /* 选择语言 */
     $("#language").on('change', function() {
         var language = $(this).children('option:selected').val();
-
         console.log(language);
         getCookie("userLanguage",language,{
             expires: 30,

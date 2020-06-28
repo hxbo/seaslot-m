@@ -99,7 +99,6 @@
         settings.filesLoaded = 0;
 
         files.forEach(function (file) {
-
             var defaultFileName, shortFileName, longFileName, fileNames;
             // 1. load base (eg, Messages.properties)
             defaultFileName = settings.path + file + '.properties';
@@ -107,10 +106,12 @@
             var shortCode = settings.language.substring(0, 2);
             shortFileName = settings.path + file + '_' + shortCode + '.properties';
             // 3. with language code and country code (eg, Messages_pt_BR.properties)
+
             if (settings.language.length >= 5) {
                 var longCode = settings.language.substring(0, 5);
                 longFileName = settings.path + file + '_' + longCode + '.properties';
                 fileNames = [defaultFileName];
+
             } else {
                 fileNames = [defaultFileName];
             }
