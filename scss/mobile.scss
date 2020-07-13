@@ -1124,17 +1124,34 @@ ol{
     }
     .row{
         margin-left: 0;
+        position: relative;
         .login-input.input-pwd{
             background-image: image_url("icon-lock.png");
         }
         .login-input.input-phone{
             background-image: image_url("icon-phone.png");
             @include background-size(1rem);
+            padding-left: 90px;
         }
         .login-input.input-yqm{
             background-image: image_url("icon-yqm.png");
             background-position: 6px center;
         }
+        .login-input.input-currency{
+            background-image: image_url("icon-currency.png");
+            background-position: 6px center;
+        }
+    }
+    .global-roaming-picker{
+        position: absolute;
+        left: 30px;
+        top: 0.3rem;
+        border-radius: 4px;
+        z-index: 99;
+        height: $input-height - 0.3rem *2;
+        border: none;
+        background: transparent;
+
     }
     .item-inner{
         padding-top: .5rem;

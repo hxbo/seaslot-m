@@ -58,12 +58,12 @@ var getNavLanguage = function(){
 /**
  * 设置语言类型： 默认英文
  */
-var i18nLanguage = "en_US";
+var i18nLanguage = "en";
 
 /*
 设置一下网站支持的语言种类
  */
-var webLanguage = ['zh_CN',  'en_US'];
+var webLanguage = ['zh',  'en'];
 
 /**
  * 执行页面i18n方法
