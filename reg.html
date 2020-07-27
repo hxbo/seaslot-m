@@ -59,18 +59,23 @@
                                placeholder="Password length must be between 6 and 20"/>
                         <i class=" i-eye-open" style="margin-right: 10px;"></i>
                     </div>
+                    <!-- 新增国际区号 20200714 -->
                     <div class="row" style="overflow: inherit">
-                        <select class="global-roaming-picker">
-                            <option value="+86">+60</option>
-                            <option value="+86">+62</option>
-                            <option value="+86">+63</option>
+                        <select name="globalRoaming"class="global-roaming-picker">
+                            <option value="+60">+60</option>
+                            <option value="+62">+62</option>
+                            <option value="+65">+65</option>
+                            <option value="+66">+66</option>
+                            <option value="+63">+63</option>
                             <option value="+86">+86</option>
-                            <option value="+86">+850</option>
-                            <option value="+86">+855</option>
-                            <option value="+86">+856</option>
+                            <option value="+850">+850</option>
+                            <option value="+855">+855</option>
+                            <option value="+856">+856</option>
                         </select>
                         <input autocomplete="off" class="login-input input-phone" type="text" name="phone" maxlength="12" id="phone" placeholder="phone number"/>
                     </div>
+
+                    <!-- 新增货币选择 20200714 -->
                     <div class="row" style="overflow: inherit">
                         <select class="login-input input-currency" id="currency">
                             <option value="">---Choose Currency---</option>

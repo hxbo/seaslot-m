@@ -156,21 +156,20 @@
 
 <script>
 
-    //起始日期
-    let now1 = new Date;
-    now1.setTime(now1.getTime() - 24 * 60 * 60 * 1000 * 4);//最后一个数字是默认起始天数
-    let startDay = `${now1.getFullYear()}-${now1.getMonth() < 7 ?  "0"+(now1.getMonth() +1) : now1.getMonth() +1}-${now1.getDate()}`;
+    //起始日期 昨天
+    var now1 = new Date;
+    now1.setTime(now1.getTime() - 24 * 60 * 60 * 1000 * 1);//最后一个数字是默认起始天数
+    var startDay = now1.getFullYear()+ '-' +(now1.getMonth() < 9 ?  "0"+(now1.getMonth() +1) : now1.getMonth() +1) + '-' + now1.getDate();
     $("#startTime").calendar({
         value: [startDay]
     });
-    //终止日期（今天）
-    let now = new Date,
-        yyyy = now.getFullYear(),
-        MM = now.getMonth() < 7 ?  "0"+(now.getMonth() +1) : now.getMonth() +1 ,
-        dd = now.getDate();
-    let today = yyyy + "-" + MM +  "-" + dd;
+
+    //终止日期（明天）
+    var now = new Date;
+    now.setTime(now.getTime() + 24 * 60 * 60 * 1000 * 1);
+    var endDay = now.getFullYear()+ '-' +(now.getMonth() < 9 ?  "0"+(now.getMonth() +1) : now.getMonth() +1) + '-' + now.getDate();
     $("#endTime").calendar({
-        value: [today]
+        value: [endDay]
     });
 
 </script>
