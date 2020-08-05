@@ -101,8 +101,9 @@
             <!-- notice -->
             <div class="notice">
                 <i class="fl icon-notice"></i>
-                <ul>
-                    <li><a href="notice-detail.html">New fishing king online, 100 times bonus waiting for you to take 100 times bonus waiting for you to take 100 times bonus waiting for you to take!</a></li>
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href="notice-detail.html">New fishing king online, 100 times bonus waiting for you to take 100 times bonus waiting for you to take 100 times bonus waiting for you to take!</a></li>
+                    <li  class="swiper-slide"><a href="notice-detail.html">2222222222222222</a></li>
                 </ul>
             </div>
             <!-- /.notice -->
@@ -359,6 +360,15 @@
             slidesPerView: 4,
             effect: 'slide',//fade,cube,flip
             autoplay: 1000,//可选选项，自动滑动
+            speed: 1000
+        });
+        var mySwiper3 = new Swiper('.notice', {
+            pagination: false,
+            direction: 'vertical',
+            loop: true,
+            slidesPerView: 1,
+            effect: 'slide',//fade,cube,flip
+            autoplay: 3000,//可选选项，自动滑动
             speed: 1000
         });
 

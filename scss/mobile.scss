@@ -360,23 +360,27 @@ header{
     padding-left:.3rem;
     margin:0 2%;
     position: relative;
+    overflow: hidden;
+    height: $height;
     top: -0.3rem;
     z-index:2;
     @include box-shadow(2px 2px 4px rgba(0,0,0,0.1));
     i.icon-notice{
         width:1.4rem;
         height: 1.4rem;
-        margin-top: 0.1rem;
-        margin-right: 0.3rem;
+        position: absolute;
+        left: 0.2rem;
+        top: 0.1rem;
         @include image-retina('icon-notice');
     }
     li{
-        padding-left: 0.5rem;
+        padding-left: 1.5rem;
     }
     a{
         line-height:$height;
         color: #8a8a8a;
         display: block;
+        width: 92%;
         font-size:0.7rem;
         overflow: hidden;
         @include ellipsis(true);
