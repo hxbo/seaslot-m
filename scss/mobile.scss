@@ -152,8 +152,10 @@ h1 {
 }
 .bar{
     @include background(linear-gradient(top,#333 #1d1d1d));
-
     height: 2.4rem;
+    &.bar-nav{
+        border-bottom: 1px solid #eea639;
+    }
     &.bar-tab{
         display: table-row;
     }
@@ -164,8 +166,8 @@ h1 {
 .bar-tab .tab-item.active, .bar-tab .tab-item:active{
     color: #fff;
     position: relative;
-    @include background(linear-gradient(bottom, #e96474,#E77879));
-
+    //@include background(linear-gradient(bottom, #e96474,#E77879));
+    @include background(linear-gradient(bottom, #d39911,#f4da6b));
     .iconfont{
         color: #fff;
         @include text-shadow(3px 3px 10px rgba(238, 109, 87, 0.4))
@@ -216,7 +218,7 @@ header.bar{
         border: none;
         width: 80%;
         float: left;
-        background:image_url('search-icon.png') no-repeat 10px center rgba(0,0,0,.4);
+        background:image_url('search-icon.png') no-repeat 10px center rgba(255,255,255,.1);
         @include background-size(18px)
     }
     .search-btn{
@@ -482,7 +484,7 @@ header{
 //block-title
 .block-title{
     $height:2.2rem;
-    $theme-bg: rgba(0,0,0,0.4);
+    $theme-bg: rgba(255,255,255,0.1);
     margin-bottom: 1rem;
     background: $theme-bg;
     width: 80%;
@@ -921,8 +923,10 @@ header{
     text-align: center;
     display: block;
     margin: 0.8rem auto;
-    @include background(linear-gradient(top, $bgColor1 $bgColor2 ));
-    color: #e05300;
+    //@include background(linear-gradient(top, $bgColor1 $bgColor2 ));
+    box-shadow: #ffda52 0 0 4px 3px inset;
+    @include background(linear-gradient(131deg, #d39911,#bc9224,#f4da6b));
+    color: #fff;
     &:active{
         @include background(linear-gradient(bottom, $bgColor1 $bgColor2 ));
     }
