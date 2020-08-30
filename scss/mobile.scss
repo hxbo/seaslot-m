@@ -169,7 +169,7 @@ h1 {
     //@include background(linear-gradient(bottom, #e96474,#E77879));
     @include background(linear-gradient(bottom, #d39911,#f4da6b));
     .iconfont{
-        color: #fff;
+        color: #fff; 
         @include text-shadow(3px 3px 10px rgba(238, 109, 87, 0.4))
     }
 }
