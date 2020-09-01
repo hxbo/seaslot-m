@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title class="i18n" data-i18n-text='title'></title>
+    <meta id="i18n_pagename" content="index-common">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="icon" type="image/png" href="i/favicon.png"><link rel="stylesheet" href="css/light7.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <!--<link rel="stylesheet" href="css/animate.css">-->
+
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left back" href="index.html" data-transition='slide-out'>
+                <span class="iconfont icon-fanhui c-white"> </span>            </a>
+            <!--<a class="icon icon-menu pull-left open-panel c-white" data-panel=".panel-left"></a>-->
+            <h1 class="title">Download APP</h1>
+            <a href="javascript:void(0)" class="icon icon-service pull-right c-white"></a>
+        </header>
+
+
+        <div class="content ">
+            <div class="">
+                <button class="submit-btn btn-big" type="button" id="submitBtn" onclick="javascript:register()">Submit</button>
+            </div>
+
+
+        </div><!-- /. content -->
+    </div>
+
+</div>
+
+
+<script type='text/javascript' src='js/jquery2.1.4.min.js' charset='utf-8'></script>
+<script src="js/win8-mobile.js?version=0.17" type="text/javascript"></script>
+<script type='text/javascript' src='js/light7.js' charset='utf-8'></script>
+<script src="js/iconfont-symbol-container.js"></script>
+<script src="js/plugins/i18n/jquery.i18n.properties.js"></script>
+<script src="js/plugins/i18n/language.js"></script>
+
+<script>
+    $(document).on('click','.open-about', function () {
+        $.popup('.popup-about');
+    });
+</script>
+<script type="text/javascript">
+
+
+
+    var isusername = /^k/;
+
+    function numberOnly(e) {
+        if (window.event) {
+            var a = window.event.keyCode;
+            return (a >= 48 && a <= 57)
+        } else {
+            var a = e.which;
+            return (a >= 48 && a <= 57) || a == 0 || a == 8
+        }
+    }
+    function register() {
+        var a = $("#username").val();
+        var b = $("#password").val();
+        var c = $("#phone").val();
+        var d = $("#fromid").val();
+        if (wRetrieval(a, b, c, d)) {
+            var e = document.getElementById("realAccount");
+            //e.action = "";
+            e.submit()
+        }
+    }
+    function createCode() {
+        var a = new Array('0123456789', '0123456789', '0123456789');
+        var b, i;
+        var c = '';
+        for (i = 0; i < 4; i++) {
+            b = Math.floor(Math.random() * 3);
+            c += a[b].substr(Math.floor(Math.random() * (a[b].length)), 1)
+        }
+        return c
+    }
+    function wRetrieval(a, b, c, d) {
+        var e = /^k/;
+
+        if (a == '') {
+            $.toast("帐号不能为空",2000, 'error-tip top-tip');
+            return false
+        } else if (a.length < 4 || a.length > 15) {
+            $.toast("帐号长度须在4~15之间",2000, 'error-tip top-tip');
+            return false
+        } else if (!e.test(a)) {
+            $.toast("帐号必须小写字母k开头",2000, 'error-tip top-tip');
+            return false
+        }
+        if (b == '') {
+            $.toast("登陆密码不能为空",2000, 'error-tip top-tip');
+            return false
+        } else if (b.length < 6 || b.length > 20) {
+            $.toast("密码长度须在6~20之间",2000, 'error-tip top-tip');
+            return false
+        }
+        var f = /^\d{11,12}$/;
+        if (c == '' || c == '请填写正确的手机号码') {
+            $.toast("联系电话不能为空",2000, 'error-tip top-tip');
+            return false
+        } else if (!f.test(c)) {
+            $.toast("电话长度应用为11~12位正确的手机号",2000, 'error-tip top-tip');
+            return false
+        }
+        if(!$('#check').is(':checked')){
+            $.toast("您还没有接受开户协议",2000, 'error-tip top-tip');
+            return false
+        }
+        return true
+    }
+    function sendsms() {
+        var b = $("#username").val();
+        var c = $("#password").val();
+        var d = $("#phone").val();
+        var e = $("#fromid").val();
+        if (!wRetrieval(b, c, d, e)) return;
+        $.getJSON("", {
+            username: b,
+            password: c,
+            phone: d,
+            fromid: e
+        }, function(a) {
+            if (a.errormsg == 'success') {
+                $.toast("发送成功,请输入收到的验证码",2000, 'error-tip top-tip');
+            }
+            else {
+                $.toast(a.errormsg,2000, 'error-tip top-tip');
+            }
+        })
+    }
+</script>
+
+</body>
+</html>

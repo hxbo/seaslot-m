@@ -236,6 +236,30 @@ header.bar{
     }
 }
 
+//登录注册按钮
+.index-login-btn-row{
+    @include display-flex();
+    @include justify-content(space-between);
+    padding: 0.2rem 0.6rem 0.7rem;
+    a{
+        height: 2.2rem;
+        color: #fff;
+        display: block;
+        text-align: center;
+        font-size: 1.0rem;
+        line-height: 2.2rem;
+        padding-left: 0.6rem;
+        border-radius: 1.3rem;
+        padding-right: 0.6rem;
+        box-shadow: #ffda52 0 0 4px 3px inset;
+        i{
+            font-size: 1rem;
+        }
+        @include flex(0 0 48%);
+        @include background(linear-gradient(131deg, #d39911,#bc9224,#f4da6b));
+    }
+}
+
 //header
 header{
     //background: image_url('header-bg.png');
