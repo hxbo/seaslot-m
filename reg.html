@@ -56,7 +56,13 @@
                     </div>
                     <div class="row input-cell " style="overflow: inherit;position: relative;">
                         <input class="login-input input-pwd" name="password" maxlength="10" id="password" type="password"
-                               placeholder="Password length must be between 6 and 20"/>
+                               placeholder="Between 6 and 20"/>
+                        <i class=" i-eye-open" style="margin-right: 10px;"></i>
+                    </div>
+                    <!-- 密码确认 20200903 -->
+                    <div class="row input-cell " style="overflow: inherit;position: relative;">
+                        <input class="login-input input-pwd" name="passwordConfirm" maxlength="10" id="passwordConfirm" type="password"
+                               placeholder="Type password again"/>
                         <i class=" i-eye-open" style="margin-right: 10px;"></i>
                     </div>
                     <!-- 新增国际区号 20200714 -->
@@ -72,8 +78,17 @@
                             <option value="+855">+855</option>
                             <option value="+856">+856</option>
                         </select>
-                        <input autocomplete="off" class="login-input input-phone" type="text" name="phone" maxlength="12" id="phone" placeholder="phone number"/>
+                        <input autocomplete="off" class="login-input input-phone" type="text" name="phone" maxlength="12" id="phone" placeholder="Phone number"/>
                     </div>
+                    <!-- 新增短信验证 20200903 -->
+                    <div class="row" style="overflow: inherit">
+                        <input type="text" autocomplete="off" class="login-input input-phone" name="sms" id="sms" placeholder="Sms code"  style="padding-left:30px;"/>
+                        <div class="row-right">
+                            <button type="button" id="getSMS" style="position: absolute;right: 3px;top: 1px;background-color: #988159;color: #fff;border-radius: 6px;padding: 6px 10px;" ><span data-i18n-text="getsms" >Get SMS Code</span></button>
+                            <span id="countDown" style="position: absolute;right: 15px;top: 0;display: none;color: #666;line-height: 2rem;"><span id="seconds" ></span> s</span>
+                        </div>
+                    </div>
+                    <!--/.新增短信验证 20200903 -->
 
                     <!-- 新增货币选择 20200714 -->
                     <div class="row" style="overflow: inherit">
@@ -98,10 +113,10 @@
                     <div class="row" style="overflow: inherit">
                         <input autocomplete="off" class="login-input input-yqm" type="text" name="yqm"  id="yqm" placeholder="Invitation code, not required"/>
                     </div>
-                    <div class="row ">
+                    <!--<div class="row ">
                         <input autocomplete="off" type="text" class="login-input yzm-input" id="code" name="code" maxlength="6" placeholder="Verification Code"/>
                         <span class="yzm"  style="margin-left: 1rem;"><img src="images/yzm.png"  alt="" style="height: 2rem;"></span>
-                    </div>
+                    </div>-->
 
                     <div class="item-inner clearfix">
                         <div class="item-input">
@@ -157,7 +172,7 @@
     });
 </script>
 <script type="text/javascript">
-
+    let language = getCookie('userLanguage');
 
 
     var isusername = /^k/;
@@ -174,6 +189,7 @@
     function register() {
         var a = $("#username").val();
         var b = $("#password").val();
+        var passwordConfirm = $("#passwordConfirm").val();
         var c = $("#phone").val();
         var d = $("#fromid").val();
         if (wRetrieval(a, b, c, d)) {
@@ -226,25 +242,52 @@
         }
         return true
     }
-    function sendsms() {
-        var b = $("#username").val();
-        var c = $("#password").val();
-        var d = $("#phone").val();
-        var e = $("#fromid").val();
-        if (!wRetrieval(b, c, d, e)) return;
-        $.getJSON("", {
-            username: b,
-            password: c,
-            phone: d,
-            fromid: e
-        }, function(a) {
-            if (a.errormsg == 'success') {
-                $.toast("发送成功,请输入收到的验证码",2000, 'error-tip top-tip');
+
+    //点击发送短信码 20200903
+    let $getSMS = $('#getSMS');
+    $getSMS.on('click',function(){
+        //7-11位数字
+        if(!/^\d{7,11}$/.test($("#phone").val())){
+            $.toast(language === 'en' ? 'Phone number must be 7-11 digits' : '请输入7-11位手机号');
+            return false;
+        }
+        /*$.ajax({
+            type: "POST",
+            url: "getSMS",
+            data: {phoneNumber:$('#phone').val()},
+            success: (res) => {
+                if(!res.code){
+                    layer.msg(language === 'en' ? 'SMS code sent' : '短信码已发送');
+                    getCode(120);
+                }else {
+                    layer.msg(res.msg);
+                }
             }
-            else {
-                $.toast(a.errormsg,2000, 'error-tip top-tip');
+        });*/
+
+        //模拟，用上面那段
+        $.toast(language === 'en' ? 'SMS code sent' : '短信码已发送');
+        getCode(120);
+
+    });
+    //获取验证码动作 20200903
+    let getCode = (s)=> {
+        const $countDown = $('#countDown'),
+            $btnGetCode = $('#getSMS'),
+            $seconds = $('#seconds');
+        $btnGetCode.hide();
+        $countDown.show();
+        $seconds.text(s);
+        let timer =  setInterval(()=>{
+            s--;
+            console.log(s)
+            $seconds.text(s);
+            if(s <= 0){
+                clearInterval(timer);
+                $btnGetCode.show();
+                $countDown.hide();
             }
-        })
+        },1000)
     }
 </script>
 
