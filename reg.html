@@ -83,8 +83,18 @@
                     <!-- 新增短信验证 20200903 -->
                     <div class="row" style="overflow: inherit">
                         <input type="text" autocomplete="off" class="login-input input-phone" name="sms" id="sms" placeholder="Sms code"  style="padding-left:30px;"/>
+                        <style>
+                            #getSMS{
+                                position: absolute;right: 3px;top: 4px;background-color: #988159;color: #fff;border-radius: 6px;padding: 6px 10px;
+                                border: 0;
+                            }
+                            #getSMS[disabled]{
+                                background-color: #ccc;
+                                color: #666;
+                            }
+                        </style>
                         <div class="row-right">
-                            <button type="button" id="getSMS" style="position: absolute;right: 3px;top: 1px;background-color: #988159;color: #fff;border-radius: 6px;padding: 6px 10px;" ><span data-i18n-text="getsms" >Get SMS Code</span></button>
+                            <button type="button" id="getSMS" disabled><span data-i18n-text="getsms" >Get SMS Code</span></button>
                             <span id="countDown" style="position: absolute;right: 15px;top: 0;display: none;color: #666;line-height: 2rem;"><span id="seconds" ></span> s</span>
                         </div>
                     </div>
