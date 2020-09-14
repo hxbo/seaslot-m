@@ -74,10 +74,14 @@ var execI18n = function(){
     获取一下资源文件名
      */
     var optionEle = $("#i18n_pagename");
-    if (optionEle.length < 1) {
-        console.log("未找到页面名称元素，请在页面写入\n <meta id=\"i18n_pagename\" content=\"页面名(对应语言包的语言文件名)\">");
-        return false;
-    };
+    try {
+        if(optionEle.length < 1) {
+            throw ("未找到页面名称元素，请在页面写入\n <meta id=\"i18n_pagename\" content=\"页面名(对应语言包的语言文件名)\">");
+        }
+    }
+    catch(err) {
+        throw err;
+    }
     var sourceName = optionEle.attr('content');
     sourceName = sourceName.split('-');
     /*
@@ -102,10 +106,14 @@ var execI18n = function(){
         }
     }
     /* 需要引入 i18n 文件*/
-    if ($.i18n == undefined) {
-        console.log("请引入i18n js 文件")
-        return false;
-    };
+    try {
+        if($.i18n == undefined) {
+            throw ("请引入i18n js 文件");
+        }
+    }
+    catch(err) {
+        throw err;
+    }
 
     /*
     这里需要进行i18n的翻译
@@ -117,30 +125,54 @@ var execI18n = function(){
         mode : 'map', //用Map的方式使用资源文件中的值
         language : i18nLanguage,
         callback : function() {//加载成功后设置显示内容
-            $('[data-i18n-text]').each(function () {
+            let $i18n = $.i18n.map;
+
+            $('[data-i18n-text]').each(function (i,item) {
+                let $i18nText = $(this).data('i18n-text');
+
+                if(!$i18n.hasOwnProperty($i18nText)) {
+                    console.error(`i18n资源中未找到该属性：${$i18nText}`);
+                    return true;
+                }
+
                 //如果text里面还有html需要过滤掉
                 var html = $(this).html();
                 var reg = /<(.*)>/;
                 if (reg.test(html)) {
                     var htmlValue = reg.exec(html)[0];
-                    $(this).html(htmlValue + $.i18n.prop($(this).data('i18n-text')));
+                    $(this).html(htmlValue + $.i18n.prop($i18nText));
                 }
                 else {
-                    $(this).text($.i18n.prop($(this).data('i18n-text')));
+                    $(this).text($.i18n.prop($i18nText));
                 }
             });
             console.log("写入完毕");
 
             $('[data-i18n-placeholder]').each(function () {
+                let $i18nPlaceholder = $(this).data('i18n-placeholder');
+                if(!$i18n.hasOwnProperty($i18nPlaceholder)) {
+                    console.error(`i18n资源中未找到该属性：${$i18nPlaceholder}`);
+                    return true;
+                }
                 $(this).attr('placeholder', $.i18n.prop($(this).data('i18n-placeholder')));
             });
             console.log("写入完毕");
 
             $('[data-i18n-url]').each(function () {
+                let $i18nUrl = $(this).data('i18n-url');
+                if(!$i18n.hasOwnProperty($i18nUrl)) {
+                    console.error(`i18n资源中未找到该属性：${$i18nUrl}`);
+                    return true;
+                }
                 $(this).css({'backgroundImage':'url('+ $.i18n.prop($(this).data("i18n-url")) +')'})
             });
 
             $('[data-i18n-src]').each(function () {
+                let $i18nSrc = $(this).data('i18n-src');
+                if(!$i18n.hasOwnProperty($i18nSrc)) {
+                    console.error(`i18n资源中未找到该属性：${$i18nSrc}`);
+                    return true;
+                }
                 $(this).attr('src', $.i18n.prop($(this).data("i18n-src")))
             });
         }
