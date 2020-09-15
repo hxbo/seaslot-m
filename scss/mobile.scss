@@ -194,11 +194,15 @@ header.bar{
 .detail-title{
     text-align: center;
     font-size: 1rem;
+    color: $secondary-color;
 }
 .detail-box{
+    color: #fff;
     img{
         width: 100%;
+        border-radius: 1.2rem;
         display: block;
+
     }
 }
 
