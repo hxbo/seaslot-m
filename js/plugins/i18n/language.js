@@ -63,7 +63,7 @@ var i18nLanguage = "en";
 /*
 设置一下网站支持的语言种类
  */
-var webLanguage = ['zh',  'en'];
+var webLanguage = ['en', 'zh'];
 
 /**
  * 执行页面i18n方法
@@ -193,8 +193,8 @@ $(function(){
         var language = $(this).children('option:selected').val();
         console.log(language);
         getCookie("userLanguage",language,{
-            expires: 30,
-            path:'/'
+            expires: 30
+            /*path:'/'*/
         });
         location.reload();
     });
