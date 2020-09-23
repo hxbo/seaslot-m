@@ -650,19 +650,24 @@ header{
 .game-list{
     ul{
         display:grid;
-        grid-gap: 10px;
+        grid-template-columns: repeat(3, 32%);
+        grid-gap: 2%;
     }
     li{
         width: 100%;
+        @include display-flex();
+        @include flex-flow(column);
+        @include justify-content(stretch);
         a{
             position: relative;
             display: block;
+            @include flex(1);
             border-radius: .5rem;
             //@include box-shadow(1px 3px 5px rgba(164, 106, 24, 0.52));
         }
         img{
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             position: relative;
             //border:3px solid darken($main-color,15%);
@@ -673,29 +678,15 @@ header{
         span{
             font-size: .7rem;
             display: block;
+            @include ellipsis;
             color: $bgColor1;
+            height: 1.6rem;
             line-height: 1.4rem;
             text-align: center;
         }
     }
 }
-@media screen and (max-width: 399px) {
-    .game-list{
-        ul{
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-        }
-    }
-}
 
-@media screen and (min-width: 400px) {
-    .game-list{
-       ul{
-           grid-template-columns: repeat(4, 1fr);
-           grid-gap: 10px;
-       }
-    }
-}
 .pic-list{
     li{
         width: 50%;
