@@ -648,20 +648,23 @@ header{
 
 //游戏大厅
 .game-list{
+    $gameNameHeight: 36px;
     ul{
         display:grid;
         grid-template-columns: repeat(3, 32%);
         grid-gap: 2%;
     }
     li{
-        width: 100%;
+        /*width: 100%;
         @include display-flex();
         @include flex-flow(column);
-        @include justify-content(stretch);
+        @include justify-content(stretch);*/
+        display: grid;
+        grid-template-rows: 1fr $gameNameHeight;
         a{
             position: relative;
             display: block;
-            @include flex(1);
+            //@include flex(1);
             border-radius: .5rem;
             //@include box-shadow(1px 3px 5px rgba(164, 106, 24, 0.52));
         }
@@ -680,8 +683,8 @@ header{
             display: block;
             @include ellipsis;
             color: $bgColor1;
-            height: 1.6rem;
-            line-height: 1.4rem;
+            height: $gameNameHeight;
+            line-height: $gameNameHeight;
             text-align: center;
         }
     }
@@ -2059,9 +2062,11 @@ $flipDuration:225ms;
         color: #a197a5;
     }
 }
-
+.bar .button-nav.pull-left{
+    width: 2.2rem;
+}
 //placeholder yanse
-$placeholderColor: #ffa670;
+$placeholderColor: #898885;
 $placeholderFontSize: 0.9rem;
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: $placeholderColor;
