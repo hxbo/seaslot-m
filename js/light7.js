@@ -2352,12 +2352,12 @@ Device/OS Detection
         return modal[0];
     };
     //显示一个消息，会在2秒钟后自动消失
-    $.toast = function(msg, time) {
-      var $toast = $("<div class='modal toast'>"+msg+"</div>").appendTo(document.body);
-      $.openModal($toast);
-      setTimeout(function() {
-        $.closeModal($toast);
-      }, time || 2000);
+    $.toast = function(msg, time, className) {
+        var $toast = $('<div class="modal toast '+(className||"")+'">'+msg+'</div>').appendTo(document.body);
+        $.openModal($toast);
+        setTimeout(function() {
+            $.closeModal($toast);
+        }, time || 2000);
     };
     $.openModal = function (modal) {
         if(defaults.closePrevious) $.closeModal();

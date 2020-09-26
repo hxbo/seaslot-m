@@ -192,6 +192,17 @@
 <script src="js/plugins/i18n/language.js"></script>
 
 <script>
+    /*
+     toast
+     $.toast(msg, time, type)
+     @params:
+     msg: 显示信息 <String>
+     time: 显示时间 <Number> 默认2000，单位毫秒
+     type: 类型 <String: 空：默认黑色  |  'success': 成功提示 |  'error': 失败提示>
+     默认中间，加.top-tip 显示在顶部
+    */
+    $.toast('打算打算打算',null,'success');
+
     $(document).on('click','.open-about', function () {
         $.popup('.popup-about');
     });
