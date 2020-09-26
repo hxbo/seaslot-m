@@ -8,4 +8,4 @@ let iconfontPath = "font_425853_kcq35maxki",
 
 
 document.write('<script src="'+ jsUrl +'" type="text/javascript" charset="utf-8"></script>');
-document.write('<link href="'+ cssUrl +'" rel="stylesheet">');
+document.write('<link href="'+  cssUrl +'" rel="stylesheet">');
