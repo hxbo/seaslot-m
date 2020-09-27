@@ -1996,7 +1996,7 @@ Device/OS Detection
             ]
         });
     };
-    $.prompt = function (text, title, callbackOk, callbackCancel) {
+    $.prompt = function (text, title,ButtonOkText, ButtonCancelText, callbackOk, callbackCancel) {
         if (typeof title === 'function') {
             callbackCancel = arguments[2];
             callbackOk = arguments[1];
@@ -2008,11 +2008,12 @@ Device/OS Detection
             afterText: '<input type="text" class="modal-text-input">',
             buttons: [
                 {
-                    text: defaults.modalButtonCancel
+                    //text: defaults.modalButtonCancel
+                    text: ButtonCancelText || defaults.modalButtonCancel
                 },
                 {
-                    text: defaults.modalButtonOk,
-                    bold: true
+                    //text: defaults.modalButtonOk
+                    text: ButtonOkText || defaults.modalButtonOk
                 }
             ],
             onClick: function (modal, index) {

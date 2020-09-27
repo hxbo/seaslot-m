@@ -195,6 +195,18 @@
      默认中间，加.top-tip 显示在顶部
     */
     $.toast('打算打算打算',null,'success');
+    /*
+     prompt
+     $.prompt(text, title, ButtonOkText, ButtonCancelText, callbackOk, callbackCancel)
+     @params:
+     text: 内容 <String>
+     title: 标题 <String>
+     ButtonOkText: 确定按钮文字 <String>
+     ButtonCancelText: 取消按钮文字 <String>
+    */
+    $.prompt('text','title','确定','取消',function (x) {
+        alert(x)
+    });
 
     $(document).on('click','.open-about', function () {
         $.popup('.popup-about');
