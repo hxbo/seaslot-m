@@ -193,8 +193,8 @@ $(function(){
         var language = $(this).children('option:selected').val();
         console.log(language);
         getCookie("userLanguage",language,{
-            expires: 30
-            /*path:'/'*/
+            expires: 30,
+            path:'./'
         });
         location.reload();
     });
