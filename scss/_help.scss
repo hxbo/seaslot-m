@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import "compass/css3";
+
+.help-center-wrap{
+    margin: 4rem 0;
+    background-color: #1b1b1b;
+    @include display-flex();
+    .help-content{
+        color: #fff;
+        padding: 15px;
+        line-height: 1.6em;
+        font-size: 16px;
+        a{
+            font-size: 16px;
+        }
+        @include flex(1);
+        & > p {
+            text-indent: 2em;
+            margin-bottom: .5rem;
+        }
+        h2{
+            font-size: 20px;
+            margin-bottom: 1.6rem;
+        }
+        .help-item{
+            background-color: rgba(255,255,255,0.1);
+            padding: 5px 10px;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            h3{
+                color: #ffa563;
+                font-size: 16px;
+                margin: 10px 0;
+                cursor: pointer;
+                &:hover{
+                    color: #fff;
+                }
+            }
+            .help-item-content{
+                font-size: 14px;
+                display: none;
+            }
+        }
+    }
+}
