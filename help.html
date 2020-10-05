@@ -287,7 +287,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="help-item">
+                        <div class="help-item" id="918kissAndroid">
                             <h3>
                                 <span class="content-zh">918KISS 安卓安装教程</span>
                                 <span class="content-en">918KISS Android installation tutorial</span>
@@ -427,12 +427,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="help-item">
+                        <div class="help-item" id="918kissiOS">
                             <h3>
                                 <span class="content-zh">918KISS 苹果安装教程</span>
                                 <span class="content-en">918KISS iOS installation tutorial</span>
                             </h3>
-                            <div class="help-item-content " >
+                            <div class="help-item-content" >
                                 <div class="content-zh">
                                     <p>非常抱歉！目前 918KISS IOS版本正在更新/维护，暂时无法提供下载！请耐心等待！</p>
 
@@ -468,6 +468,7 @@
             $(this).next('.help-item-content').slideToggle()
         })
     });
+
     if(document.cookie){
         var lang = getCookie("userLanguage");
         if(lang == 'zh'){
@@ -478,6 +479,49 @@
             $('.content-zh').hide();
         }
     }
+
+
+    /* start url传参 ?open=918kiss  判断滚动到制定位置  20201005*/
+    $(document).ready(function () {
+        const isAndroid = /(Android)/i.test(navigator.userAgent);
+        const isIos = /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent);
+        var url = window.location.search;
+        var theRequest = new Object();
+
+        if ( url.indexOf( "?" ) !== -1 ) {
+            var str = url.substr( 1 ); //substr()方法返回从参数值开始到结束的字符串；
+            var strs = str.split( "&" );
+            for ( var i = 0; i < strs.length; i++ ) {
+                theRequest[ strs[ i ].split( "=" )[ 0 ] ] = ( strs[ i ].split( "=" )[ 1 ] );
+            }
+            console.log( theRequest.open );
+        }
+        //918kiss
+        if (theRequest.open === '918kiss') {
+            if (isIos) {
+                $("#918kissiOS > h3").trigger('click');
+                scrollTo('#918kissiOS',300)
+            } else if (isAndroid) { //isAndroid
+                $("#918kissAndroid  > h3").trigger('click');
+                scrollTo('#918kissAndroid',300)
+            }
+        }
+    });
+
+    //滚动到指定位置
+    function scrollTo(element,speed) {
+        if(!speed){
+            speed = 300;
+        }
+        if(!element){
+            $(".page .content").animate({scrollTop:0},speed);
+        }else{
+            if(element.length>0){
+                $(".page .content").animate({scrollTop:$(element).offset().top -70},speed);
+            }
+        }
+    }
+    /* end url传参 ?open=918kiss  判断滚动到制定位置  20201005*/
 </script>
 </body>
 </html>
