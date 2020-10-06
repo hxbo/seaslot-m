@@ -2,7 +2,9 @@
  * Created by Administrator on 2020/4/21.
  * Edit by Administrator on
  */
-let iconfontPath = "font_425853_kcq35maxki",
+
+// https://www.iconfont.cn/manage/index?manage_type=myprojects&projectId=425853
+let iconfontPath = "font_425853_02it308s4q7t",
     jsUrl =  " //at.alicdn.com/t/"+ iconfontPath +".js ",
     cssUrl = "//at.alicdn.com/t/"+ iconfontPath +".css";
 

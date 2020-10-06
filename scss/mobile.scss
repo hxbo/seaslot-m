@@ -2144,3 +2144,28 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         margin-top: 0 !important;
     }
 }
+
+//go to top
+.goto-top {
+    $size: 40px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 10000;
+    background-color: rgba(255,255,255,0.3);
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
+    @include opacity(0);
+    @include transition(0.5s);
+    i.iconfont {
+        font-size: 24px;
+        color: #fff;
+    }
+    &.active {
+        @include opacity(1)
+    }
+}
