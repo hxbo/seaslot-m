@@ -1503,7 +1503,7 @@ body .color-success:active,
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
 
   -webkit-flex-shrink: 1;
   -ms-flex: 0 1 auto;
