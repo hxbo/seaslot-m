@@ -8,7 +8,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="icon" type="image/png" href="i/favicon.png"><link rel="stylesheet" href="css/light7.css">
+    <link rel="icon" type="image/png" href="i/favicon.png">
+    <link rel="stylesheet" href="css/light7.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/mobile.css">
     <!--<link rel="stylesheet" href="css/animate.css">-->
@@ -166,10 +167,20 @@
 
 <script>
 
+    function getDate(dateStr) {
+        let dateArr = dateStr.split(/[- : \/]/);
+        return new Date(dateArr[0], dateArr[1] - 1, dateArr[2], dateArr[3], dateArr[4], dateArr[5]);
+    }
+
     //起始日期 昨天
     var now1 = new Date;
     now1.setTime(now1.getTime() - 24 * 60 * 60 * 1000 * 1);//最后一个数字是默认起始天数
-    var startDay = now1.getFullYear()+ '-' +(now1.getMonth() < 9 ?  "0"+(now1.getMonth() +1) : now1.getMonth() +1) + '-' + now1.getDate();
+    var startDay =
+        now1.getFullYear()
+        + '-' +
+        (now1.getMonth() < 9 ?  "0"+(now1.getMonth() +1) : now1.getMonth() +1)
+        + '-' +
+        (now1.getDate() < 9 ?  "0" + now1.getDate() : now1.getDate());
     $("#startTime").calendar({
         value: [startDay]
     });
@@ -177,7 +188,12 @@
     //终止日期（明天）
     var now = new Date;
     now.setTime(now.getTime() + 24 * 60 * 60 * 1000 * 1);
-    var endDay = now.getFullYear()+ '-' +(now.getMonth() < 9 ?  "0"+(now.getMonth() +1) : now.getMonth() +1) + '-' + now.getDate();
+    var endDay =
+        now.getFullYear()
+        + '-' +
+        (now.getMonth() < 9 ?  "0"+(now.getMonth() +1) : now.getMonth() +1)
+        + '-' +
+        (now.getDate() < 9 ?  "0" + now.getDate() : now.getDate());
     $("#endTime").calendar({
         value: [endDay]
     });
