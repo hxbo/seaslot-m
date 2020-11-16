@@ -49,7 +49,7 @@ $(function () {
     });
 });
 
-//有顶部下载
+//有顶部下载  20201116
 let hasAppDown = function () {
     setTimeout(function () {
         let $appDown = $(".app-down");

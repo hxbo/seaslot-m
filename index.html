@@ -32,7 +32,7 @@
 
 <div class="page-group">
     <div class="page page-current disable-router">
-        <!-- 顶部下载提示 -->
+        <!-- 顶部下载提示 20201116  -->
         <div class="app-down">
             <i class="close icon-close"></i>
             <a href="#">
@@ -347,25 +347,15 @@
 
 <script type="text/javascript" charset="UTF-8">
 
-    //重要通知 调用 20200509
-    //win8WapSetting.noticeAlert();
-    //首页优惠弹窗 调用 20200321
-    //win8WapSetting.indexImgAd('images/index-popup-img-ad/zhudan460x600.jpg','#');
-    //未登录
-    //unlogin();
 
-    /*win8WapSetting.floatService({
-        size:36, // 图标尺寸，最大64
-        position:"left", //left-左浮动,right-右浮动
-        linkUrl : "#/service" //客服地址
-    });*/
-
-    //顶部下载
-    hasAppDown()
 </script>
 <script>
 
     $(function () {
+
+        //顶部下载 20201116
+        hasAppDown()
+
         var mySwiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
             autoplayDisableOnInteraction: false,
