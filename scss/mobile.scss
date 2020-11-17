@@ -2197,3 +2197,35 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
         @include opacity(1)
     }
 }
+
+
+.upload-img-file {
+    margin: 10px 0;
+    position: relative;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+        width: 200px;
+        height: 150px;
+        display: block;
+        margin: 0;
+    }
+    a.file-delete {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        font-size: 18px;
+        top: 0;
+        right: -36px;
+        color: #fff;
+        &:hover{
+            background-color: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+    }
+}
