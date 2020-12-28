@@ -4,7 +4,7 @@ Error: File to import not found or unreadable: compass.
 
 1: @charset "UTF-8";
 2: /*!
-3: scss design by heixaobo  qq:9304600
+3: scss design by
 4: *\/
 5: 
 6: @import "compass", "normalize", "compass/support", "compass/css3", "compass/utilities";
@@ -53,4 +53,4 @@ C:/Ruby26-x64/bin/sass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass.\A         on line 6 of win8-style-mobile.scss\A \A 1: @charset \"UTF-8\";\A 2: /*!\A 3: scss design by heixaobo  qq:9304600\A 4: */\A 5: \A 6: @import \"compass\", \"normalize\", \"compass/support\", \"compass/css3\", \"compass/utilities\";\A 7: @import  \"retina-sprites\",\"mixin\";\A 8: \A 9: //\A 10: //useful commond:\A 11: "; }
+  content: "Error: File to import not found or unreadable: compass.\A         on line 6 of win8-style-mobile.scss\A \A 1: @charset \"UTF-8\";\A 2: /*!\A 3: scss design by  \A 4: */\A 5: \A 6: @import \"compass\", \"normalize\", \"compass/support\", \"compass/css3\", \"compass/utilities\";\A 7: @import  \"retina-sprites\",\"mixin\";\A 8: \A 9: //\A 10: //useful commond:\A 11: "; }

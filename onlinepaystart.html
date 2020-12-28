@@ -361,7 +361,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- upload file 20201117 -->
+                                    <!-- upload file 20201120 -->
                                     <div class="upload-img-file">
                                         <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1605632276254&di=18e488e7445a1a8bada6d970f7baae9c&imgtype=0&src=http%3A%2F%2Fpic.pc6.com%2Fup%2F2011-12%2F20111212991527305931.jpg" alt="">
                                         <a href="#" class="file-delete fa fa-trash-o"> 删除</a>
@@ -398,16 +398,25 @@
 <script src="js/plugins/i18n/language.js"></script>
 <script>
     $(function () {
-        $('.quick-input a').on('click',function() {
-            let $recharge = $(this).parents('form').find('.recharge');
-            let num = $(this).text();
-            $recharge.val(num);
-        });
+        var newDate = new Date(),
+            year = newDate.getFullYear(),
+            month = newDate.getMonth() < 9 ? '0' + newDate.getMonth() +1 : newDate.getMonth() +1,
+            date = newDate.getDate() < 10 ? '0' + newDate.getDate() : newDate.getDate();
+        console.log(year,month,date)
+
         $("#datetime-picker").datetimePicker({
                 toolbarTemplate: '<header class="bar bar-nav datetime-picker-header">\
                 <button class="button button-link pull-right close-picker">ok</button>\
                 <h1 class="title">enter date and time</h1>\
-                </header>'
+                </header>',
+            value:[2020, 12, 08, 17, 48]
+        });
+
+
+        $('.quick-input a').on('click',function() {
+            let $recharge = $(this).parents('form').find('.recharge');
+            let num = $(this).text();
+            $recharge.val(num);
         });
     });
 
